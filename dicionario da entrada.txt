@@ -1,5 +1,0 @@
-Tabela para ajudar a fazer as instruções -> https://docs.google.com/spreadsheets/d/1we0psMfnWwTtgIsuSNk7fYEk0m7-rpxow_j6TRIUOrk/edit?usp=sharing
-addi $s1,$t1,1
-j algumaCoisa
-jal algumaCoisa
-add $s5,$t5,$t3
