@@ -1,3 +1,12 @@
+//Assim que a página carrega abre imagem em svg
+xhr = new XMLHttpRequest();
+xhr.open("GET","imagem.svg",false);
+xhr.onload = function(e) {
+  document.getElementById("imagem")
+    .appendChild(xhr.responseXML.documentElement);
+}
+xhr.send("");
+//----
 
 function desenhaPC(){
     $('#tabPC').html('')
