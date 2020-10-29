@@ -33,13 +33,13 @@
    inkscape:window-height="1017"
    id="namedview768"
    showgrid="false"
-   inkscape:zoom="0.6455623"
-   inkscape:cx="315.96502"
-   inkscape:cy="548.42887"
+   inkscape:zoom="0.91296296"
+   inkscape:cx="493.77652"
+   inkscape:cy="398.53895"
    inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
-   inkscape:current-layer="layer12"
+   inkscape:current-layer="layer2"
    inkscape:document-rotation="0" />
 <style
    type="text/css"
@@ -839,11 +839,121 @@
    x2="239.43521"
    y2="533.54651"
    id="line591-7"
-   style="fill:none;stroke:#00b7a9;stroke-width:3;stroke-miterlimit:10" /></g><g
+   style="fill:none;stroke:#00b7a9;stroke-width:3;stroke-miterlimit:10" /><g
+   id="g937">
+		<g
+   id="g935">
+			<line
+   class="st1"
+   x1="960.5"
+   y1="552.5"
+   x2="983.73"
+   y2="552.5"
+   id="line929" />
+			<g
+   id="g933">
+				<polygon
+   class="st2"
+   points="981.77,555.38 992.5,552.5 981.77,549.62     "
+   id="polygon931" />
+			</g>
+		</g>
+	</g><g
+   id="g947">
+		<g
+   id="g945">
+			<line
+   class="st1"
+   x1="797.5"
+   y1="552.5"
+   x2="820.73"
+   y2="552.5"
+   id="line939" />
+			<g
+   id="g943">
+				<polygon
+   class="st2"
+   points="818.77,555.38 829.5,552.5 818.77,549.62     "
+   id="polygon941" />
+			</g>
+		</g>
+	</g><rect
+   x="833.5"
+   y="500.5"
+   class="st1"
+   width="127"
+   height="191"
+   id="rect949" /><polyline
+   class="st1"
+   points="457,386.5 654.5,386.5 654.5,542.5  "
+   id="polyline951" /><polyline
+   class="st1"
+   points="466.5,321.5 1011.5,321.5 1011.5,540  "
+   id="polyline953" /><polyline
+   class="st1"
+   points="466.5,296.5 1058.5,296.5 1058.5,724.5 893.5,724.5 893.5,691.5  "
+   id="polyline955" /><g
+   id="g965">
+		<g
+   id="g963">
+			<polyline
+   class="st1"
+   points="557.5,714.5 616.5,714.5 616.5,228.5 621.73,228.5    "
+   id="polyline957" />
+			<g
+   id="g961">
+				<polygon
+   class="st2"
+   points="619.77,231.38 630.5,228.5 619.77,225.62     "
+   id="polygon959" />
+			</g>
+		</g>
+	</g><g
+   id="g975">
+		<g
+   id="g973">
+			<line
+   class="st1"
+   x1="616.5"
+   y1="614.66"
+   x2="624.73"
+   y2="614.66"
+   id="line967" />
+			<g
+   id="g971">
+				<polygon
+   class="st2"
+   points="622.77,617.54 633.5,614.66 622.77,611.78     "
+   id="polygon969" />
+			</g>
+		</g>
+	</g><ellipse
+   class="st1"
+   cx="521.5"
+   cy="714.5"
+   rx="36"
+   ry="54"
+   id="ellipse977" /><g
+   id="g987">
+		<g
+   id="g985">
+			<polyline
+   class="st1"
+   points="345.85,510.5 345.85,535.5 375.73,535.5    "
+   id="polyline979" />
+			<g
+   id="g983">
+				<polygon
+   class="st2"
+   points="373.77,538.38 384.5,535.5 373.77,532.62     "
+   id="polygon981" />
+			</g>
+		</g>
+	</g></g><g
    inkscape:groupmode="layer"
    id="layer9"
    inkscape:label="addPC"
-   style="display:inline"><g
+   style="display:inline;mix-blend-mode:multiply"><g
      id="g8571"
      class="addIn">
 		<g
@@ -856,14 +966,14 @@
    id="g8563">
 				<polygon
    class="st2"
-   points="133.77,85.62 144.5,88.5 133.77,91.38 "
+   points="133.77,91.38 133.77,85.62 144.5,88.5 "
    id="polygon8561" />
 			</g>
 			<g
    id="g8567">
 				<polygon
    class="st2"
-   points="90.27,471.38 101,468.5 90.27,465.62 "
+   points="90.27,465.62 90.27,471.38 101,468.5 "
    id="polygon8565" />
 			</g>
 		</g>
@@ -880,7 +990,7 @@
    id="g8577">
 				<polygon
    class="st2"
-   points="902.5,93.5 891.77,96.38 891.77,90.62 "
+   points="891.77,90.62 902.5,93.5 891.77,96.38 "
    id="polygon8575" />
 			</g>
 		</g>
@@ -898,7 +1008,7 @@
      height="160"
      id="rect8585" /><polygon
      class="st1"
-     points="147.5,62.5 147.5,114.5 162.5,135.5 147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 "
+     points="209.5,169.5 209.5,100.5 147.5,62.5 147.5,114.5 162.5,135.5 147.5,154.5 147.5,209.5 "
      id="polygon8587" /><path
      class="st1"
      d="m 923.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -89 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 89 c 0,8.28 -6.72,15 -15,15 z"
@@ -917,7 +1027,7 @@
    id="g8595">
 				<polygon
    class="st2"
-   points="133.77,185.38 144.5,182.5 133.77,179.62 "
+   points="133.77,179.62 133.77,185.38 144.5,182.5 "
    id="polygon8593" />
 			</g>
 		</g>
@@ -938,7 +1048,7 @@
    id="g8638">
 				<polygon
    class="st2"
-   points="978.77,182.38 989.5,179.5 978.77,176.62 "
+   points="989.5,179.5 978.77,176.62 978.77,182.38 "
    id="polygon8636" />
 			</g>
 		</g><polyline
@@ -956,7 +1066,7 @@
    id="g8628">
 				<polygon
    class="st2"
-   points="23.77,465.62 34.5,468.5 23.77,471.38 "
+   points="34.5,468.5 23.77,471.38 23.77,465.62 "
    id="polygon8626" />
 			</g>
 		</g>
@@ -975,7 +1085,7 @@
    id="g8646">
 				<polygon
    class="st2"
-   points="678.77,486.38 689.5,483.5 678.77,480.62 "
+   points="689.5,483.5 678.77,480.62 678.77,486.38 "
    id="polygon8644" />
 			</g>
 		</g>
@@ -994,7 +1104,7 @@
    id="g8656">
 				<polygon
    class="st2"
-   points="626.77,561.38 637.5,558.5 626.77,555.62 "
+   points="637.5,558.5 626.77,555.62 626.77,561.38 "
    id="polygon8654" />
 			</g>
 		</g>
@@ -1010,14 +1120,14 @@
    id="g8666">
 				<polygon
    class="st2"
-   points="468.77,711.62 479.5,714.5 468.77,717.38 "
+   points="479.5,714.5 468.77,717.38 468.77,711.62 "
    id="polygon8664" />
 			</g>
 			<g
    id="g8670">
 				<polygon
    class="st2"
-   points="368.77,324.38 379.5,321.5 368.77,318.62 "
+   points="379.5,321.5 368.77,318.62 368.77,324.38 "
    id="polygon8668" />
 			</g>
 		</g>
@@ -1039,7 +1149,7 @@
    id="g8682">
 				<polygon
    class="st2"
-   points="638.77,727.38 649.5,724.5 638.77,721.62 "
+   points="649.5,724.5 638.77,721.62 638.77,727.38 "
    id="polygon8680" />
 			</g>
 		</g>
@@ -1058,7 +1168,7 @@
    id="g8692">
 				<polygon
    class="st2"
-   points="677.77,586.38 688.5,583.5 677.77,580.62 "
+   points="688.5,583.5 677.77,580.62 677.77,586.38 "
    id="polygon8690" />
 			</g>
 		</g>
@@ -1089,7 +1199,7 @@
    id="g8708">
 				<polygon
    class="st2"
-   points="417.77,513.38 428.5,510.5 417.77,507.62 "
+   points="428.5,510.5 417.77,507.62 417.77,513.38 "
    id="polygon8706" />
 			</g>
 		</g>
@@ -1108,7 +1218,7 @@
    id="g8718">
 				<polygon
    class="st2"
-   points="418.27,460.38 429,457.5 418.27,454.62 "
+   points="429,457.5 418.27,454.62 418.27,460.38 "
    id="polygon8716" />
 			</g>
 		</g>
@@ -1125,14 +1235,14 @@
    id="g8728">
 				<polygon
    class="st2"
-   points="133.77,85.62 144.5,88.5 133.77,91.38 "
+   points="144.5,88.5 133.77,91.38 133.77,85.62 "
    id="polygon8726" />
 			</g>
 			<g
    id="g8732">
 				<polygon
    class="st2"
-   points="90.27,471.38 101,468.5 90.27,465.62 "
+   points="101,468.5 90.27,465.62 90.27,471.38 "
    id="polygon8730" />
 			</g>
 		</g>
@@ -1149,7 +1259,7 @@
    id="g8742">
 				<polygon
    class="st2"
-   points="902.5,93.5 891.77,96.38 891.77,90.62 "
+   points="891.77,96.38 891.77,90.62 902.5,93.5 "
    id="polygon8740" />
 			</g>
 		</g>
@@ -1167,7 +1277,7 @@
      height="160"
      id="rect8750" /><polygon
      class="st1"
-     points="162.5,135.5 147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 147.5,62.5 147.5,114.5 "
+     points="209.5,100.5 147.5,62.5 147.5,114.5 162.5,135.5 147.5,154.5 147.5,209.5 209.5,169.5 "
      id="polygon8752" /><path
      class="st1"
      d="m 923.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -89 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 89 c 0,8.28 -6.72,15 -15,15 z"
@@ -1186,337 +1296,15 @@
    id="g8760">
 				<polygon
    class="st2"
-   points="133.77,185.38 144.5,182.5 133.77,179.62 "
+   points="144.5,182.5 133.77,179.62 133.77,185.38 "
    id="polygon8758" />
-			</g>
-		</g>
-	</g></g><g
-   inkscape:groupmode="layer"
-   id="layer11"
-   inkscape:label="addALU"
-   style="display:inline"><g
-     id="g8847"
-     style="enable-background:new 0 0 1080 856">
-		<g
-   id="g8845">
-			<polyline
-   class="st1"
-   points="809.5,552.5 809.5,706.5 976.5,706.5 976.5,611.5 983.73,611.5    "
-   id="polyline8839" />
-			<g
-   id="g8843">
-				<polygon
-   class="st2"
-   points="981.77,614.38 992.5,611.5 981.77,608.62     "
-   id="polygon8841" />
-			</g>
-		</g>
-	</g><polyline
-     class="st1"
-     points="743.5,592.5 743.5,724.5 727.5,724.5  "
-     id="polyline8849"
-     style="enable-background:new 0 0 1080 856" /><polygon
-     class="st1"
-     points="695.5,464.5 695.5,517.5 708.5,535.5 695.5,555.5 695.5,608.5 797.5,571.5 797.5,500.5  "
-     id="polygon8851"
-     style="enable-background:new 0 0 1080 856" /><ellipse
-     class="st1"
-     cx="690"
-     cy="724.5"
-     rx="37.5"
-     ry="54"
-     id="ellipse8853"
-     style="enable-background:new 0 0 1080 856" /><g
-     id="g8861"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-			<line
-   class="st1"
-   x1="937.5"
-   y1="179.5"
-   x2="980.72998"
-   y2="179.5"
-   id="line8855" />
-			<g
-   id="g8859">
-				<polygon
-   class="st2"
-   points="978.77,182.38 989.5,179.5 978.77,176.62 "
-   id="polygon8857" />
-			</g>
-		</g><polyline
-     class="st1"
-     points="466.5,342.5 604.5,342.5 604.5,824.5 689.5,824.5 689.5,778.5  "
-     id="polyline8863"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><g
-     id="g8873"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8871">
-			<polyline
-   class="st1"
-   points="25.73,468.5 20.5,468.5 20.5,20.5 1045.5,20.5 1045.5,141.5 1022.5,141.5    "
-   id="polyline8865" />
-			<g
-   id="g8869">
-				<polygon
-   class="st2"
-   points="23.77,465.62 34.5,468.5 23.77,471.38 "
-   id="polygon8867" />
-			</g>
-		</g>
-	</g><g
-     id="g8883"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8881">
-			<line
-   class="st1"
-   x1="584.5"
-   y1="483.5"
-   x2="680.72998"
-   y2="483.5"
-   id="line8875" />
-			<g
-   id="g8879">
-				<polygon
-   class="st2"
-   points="678.77,486.38 689.5,483.5 678.77,480.62 "
-   id="polygon8877" />
-			</g>
-		</g>
-	</g><g
-     id="g8893"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8891">
-			<line
-   class="st1"
-   x1="584.5"
-   y1="558.5"
-   x2="628.72998"
-   y2="558.5"
-   id="line8885" />
-			<g
-   id="g8889">
-				<polygon
-   class="st2"
-   points="626.77,561.38 637.5,558.5 626.77,555.62 "
-   id="polygon8887" />
-			</g>
-		</g>
-	</g><g
-     id="g8907"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8905">
-			<polyline
-   class="st1"
-   points="470.73,714.5 234.5,714.5 234.5,321.5 370.73,321.5    "
-   id="polyline8895" />
-			<g
-   id="g8899">
-				<polygon
-   class="st2"
-   points="468.77,711.62 479.5,714.5 468.77,717.38 "
-   id="polygon8897" />
-			</g>
-			<g
-   id="g8903">
-				<polygon
-   class="st2"
-   points="368.77,324.38 379.5,321.5 368.77,318.62 "
-   id="polygon8901" />
-			</g>
-		</g>
-	</g><rect
-     x="434.5"
-     y="431.5"
-     class="st1"
-     width="150"
-     height="213"
-     id="rect8909"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><g
-     id="g8919"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8917">
-			<polyline
-   class="st1"
-   points="434.5,714.5 434.5,811.5 628.5,811.5 628.5,724.5 640.73,724.5    "
-   id="polyline8911" />
-			<g
-   id="g8915">
-				<polygon
-   class="st2"
-   points="638.77,727.38 649.5,724.5 638.77,721.62 "
-   id="polygon8913" />
-			</g>
-		</g>
-	</g><g
-     id="g8929"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8927">
-			<line
-   class="st1"
-   x1="669.5"
-   y1="583.5"
-   x2="679.72998"
-   y2="583.5"
-   id="line8921" />
-			<g
-   id="g8925">
-				<polygon
-   class="st2"
-   points="677.77,586.38 688.5,583.5 677.77,580.62 "
-   id="polygon8923" />
-			</g>
-		</g>
-	</g><path
-     class="st1"
-     d="m 654.5,631.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
-     id="path8931"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><path
-     class="st1"
-     d="m 1008.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -88 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 88 c 0,8.28 -6.72,15 -15,15 z"
-     id="path8933"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><ellipse
-     class="st1"
-     cx="426.5"
-     cy="322.5"
-     rx="40"
-     ry="98"
-     id="ellipse8935"
-     style="display:inline;mix-blend-mode:normal" /><g
-     id="g8945"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8943">
-			<line
-   class="st1"
-   x1="234.5"
-   y1="510.5"
-   x2="419.73001"
-   y2="510.5"
-   id="line8937" />
-			<g
-   id="g8941">
-				<polygon
-   class="st2"
-   points="417.77,513.38 428.5,510.5 417.77,507.62 "
-   id="polygon8939" />
-			</g>
-		</g>
-	</g><g
-     id="g8955"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8953">
-			<line
-   class="st1"
-   x1="235"
-   y1="457.5"
-   x2="420.23001"
-   y2="457.5"
-   id="line8947" />
-			<g
-   id="g8951">
-				<polygon
-   class="st2"
-   points="418.27,460.38 429,457.5 418.27,454.62 "
-   id="polygon8949" />
-			</g>
-		</g>
-	</g><g
-     id="g8969"
-     class="addIn"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8967">
-			<polyline
-   class="st1"
-   points="135.73,88.5 83.5,88.5 83.5,468.5 92.23,468.5    "
-   id="polyline8957" />
-			<g
-   id="g8961">
-				<polygon
-   class="st2"
-   points="133.77,85.62 144.5,88.5 133.77,91.38 "
-   id="polygon8959" />
-			</g>
-			<g
-   id="g8965">
-				<polygon
-   class="st2"
-   points="90.27,471.38 101,468.5 90.27,465.62 "
-   id="polygon8963" />
-			</g>
-		</g>
-	</g><g
-     id="g8979"
-     transform="matrix(1.1454824,0,0,1,-131.29791,0)"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8977">
-			<polyline
-   class="st1"
-   points="893.73,93.5 646.5,93.5 646.5,135.5 309.5,135.5    "
-   id="polyline8971" />
-			<g
-   id="g8975">
-				<polygon
-   class="st2"
-   points="902.5,93.5 891.77,96.38 891.77,90.62 "
-   id="polygon8973" />
-			</g>
-		</g>
-	</g><rect
-     x="38.5"
-     y="409.5"
-     class="st1"
-     width="36"
-     height="118"
-     id="rect8981"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><rect
-     x="103.5"
-     y="445.5"
-     class="st1"
-     width="112"
-     height="160"
-     id="rect8983"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><polygon
-     class="st1"
-     points="162.5,135.5 147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 147.5,62.5 147.5,114.5 "
-     id="polygon8985"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><path
-     class="st1"
-     d="m 923.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -89 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 89 c 0,8.28 -6.72,15 -15,15 z"
-     id="path8987"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal" /><g
-     id="g8997"
-     style="enable-background:new 0 0 1080 856;display:inline;mix-blend-mode:normal">
-		<g
-   id="g8995">
-			<line
-   class="st1"
-   x1="118.5"
-   y1="182.5"
-   x2="135.73"
-   y2="182.5"
-   id="line8989" />
-			<g
-   id="g8993">
-				<polygon
-   class="st2"
-   points="133.77,185.38 144.5,182.5 133.77,179.62 "
-   id="polygon8991" />
 			</g>
 		</g>
 	</g></g><g
    inkscape:groupmode="layer"
    id="layer12"
    inkscape:label="addWrite"
-   style="mix-blend-mode:multiply"><g
+   style="display:inline;mix-blend-mode:normal"><g
      id="g9088">
 		<g
    id="g9086">
@@ -1528,7 +1316,7 @@
    id="g9084">
 				<polygon
    class="st2"
-   points="431,618.5 420.27,621.38 420.27,615.62 "
+   points="420.27,621.38 420.27,615.62 431,618.5 "
    id="polygon9082" />
 			</g>
 		</g>
@@ -1559,7 +1347,7 @@
    id="g9102">
 				<polygon
    class="st2"
-   points="384,593.09 373.27,590.21 373.27,595.96 "
+   points="373.27,590.21 373.27,595.96 384,593.09 "
    id="polygon9100" />
 			</g>
 		</g>
@@ -1576,7 +1364,7 @@
    id="g9112">
 				<polygon
    class="st2"
-   points="992.5,611.5 981.77,608.62 981.77,614.38 "
+   points="981.77,608.62 981.77,614.38 992.5,611.5 "
    id="polygon9110" />
 			</g>
 		</g>
@@ -1609,7 +1397,7 @@
    id="g9128">
 				<polygon
    class="st2"
-   points="989.5,179.5 978.77,176.62 978.77,182.38 "
+   points="978.77,176.62 978.77,182.38 989.5,179.5 "
    id="polygon9126" />
 			</g>
 		</g><polyline
@@ -1629,7 +1417,7 @@
    id="g9138">
 				<polygon
    class="st2"
-   points="34.5,468.5 23.77,471.38 23.77,465.62 "
+   points="23.77,471.38 23.77,465.62 34.5,468.5 "
    id="polygon9136" />
 			</g>
 		</g>
@@ -1649,7 +1437,7 @@
    id="g9148">
 				<polygon
    class="st2"
-   points="689.5,483.5 678.77,480.62 678.77,486.38 "
+   points="678.77,480.62 678.77,486.38 689.5,483.5 "
    id="polygon9146" />
 			</g>
 		</g>
@@ -1669,7 +1457,7 @@
    id="g9158">
 				<polygon
    class="st2"
-   points="637.5,558.5 626.77,555.62 626.77,561.38 "
+   points="626.77,555.62 626.77,561.38 637.5,558.5 "
    id="polygon9156" />
 			</g>
 		</g>
@@ -1686,14 +1474,14 @@
    id="g9168">
 				<polygon
    class="st2"
-   points="479.5,714.5 468.77,717.38 468.77,711.62 "
+   points="468.77,717.38 468.77,711.62 479.5,714.5 "
    id="polygon9166" />
 			</g>
 			<g
    id="g9172">
 				<polygon
    class="st2"
-   points="379.5,321.5 368.77,318.62 368.77,324.38 "
+   points="368.77,318.62 368.77,324.38 379.5,321.5 "
    id="polygon9170" />
 			</g>
 		</g>
@@ -1717,7 +1505,7 @@
    id="g9184">
 				<polygon
    class="st2"
-   points="649.5,724.5 638.77,721.62 638.77,727.38 "
+   points="638.77,721.62 638.77,727.38 649.5,724.5 "
    id="polygon9182" />
 			</g>
 		</g>
@@ -1752,7 +1540,7 @@
    id="g9200">
 				<polygon
    class="st2"
-   points="428.5,510.5 417.77,507.62 417.77,513.38 "
+   points="417.77,507.62 417.77,513.38 428.5,510.5 "
    id="polygon9198" />
 			</g>
 		</g>
@@ -1772,7 +1560,7 @@
    id="g9210">
 				<polygon
    class="st2"
-   points="429,457.5 418.27,454.62 418.27,460.38 "
+   points="418.27,454.62 418.27,460.38 429,457.5 "
    id="polygon9208" />
 			</g>
 		</g>
@@ -1790,14 +1578,14 @@
    id="g9220">
 				<polygon
    class="st2"
-   points="144.5,88.5 133.77,91.38 133.77,85.62 "
+   points="133.77,91.38 133.77,85.62 144.5,88.5 "
    id="polygon9218" />
 			</g>
 			<g
    id="g9224">
 				<polygon
    class="st2"
-   points="101,468.5 90.27,465.62 90.27,471.38 "
+   points="90.27,465.62 90.27,471.38 101,468.5 "
    id="polygon9222" />
 			</g>
 		</g>
@@ -1815,7 +1603,7 @@
    id="g9234">
 				<polygon
    class="st2"
-   points="891.77,96.38 891.77,90.62 902.5,93.5 "
+   points="891.77,90.62 902.5,93.5 891.77,96.38 "
    id="polygon9232" />
 			</g>
 		</g>
@@ -1857,8 +1645,936 @@
    id="g9252">
 				<polygon
    class="st2"
-   points="144.5,182.5 133.77,179.62 133.77,185.38 "
+   points="133.77,179.62 133.77,185.38 144.5,182.5 "
    id="polygon9250" />
+			</g>
+		</g>
+	</g><g
+     id="g997">
+		<g
+   id="g995">
+			<polyline
+   class="st1"
+   points="422.23,618.5 416.5,618.5 416.5,835.5 1038.5,835.5 1038.5,583.5 1027.5,583.5    "
+   id="polyline989" />
+			<g
+   id="g993">
+				<polygon
+   class="st2"
+   points="420.27,621.38 420.27,615.62 431,618.5 "
+   id="polygon991" />
+			</g>
+		</g>
+	</g><polyline
+     class="st1"
+     points="442,413.5 507.5,413.5 507.5,431.5  "
+     id="polyline999" /><path
+     class="st1"
+     d="m 1012.5,627.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1001" /><path
+     class="st1"
+     d="m 404.5,608.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1003" /></g><g
+   inkscape:groupmode="layer"
+   id="layer11"
+   inkscape:label="addALU"
+   style="display:inline;mix-blend-mode:normal"><g
+     id="g8847">
+		<g
+   id="g8845">
+			<polyline
+   class="st1"
+   points="809.5,552.5 809.5,706.5 976.5,706.5 976.5,611.5 983.73,611.5    "
+   id="polyline8839" />
+			<g
+   id="g8843">
+				<polygon
+   class="st2"
+   points="981.77,614.38 992.5,611.5 981.77,608.62 "
+   id="polygon8841" />
+			</g>
+		</g>
+	</g><polyline
+     class="st1"
+     points="743.5,592.5 743.5,724.5 727.5,724.5  "
+     id="polyline8849" /><polygon
+     class="st1"
+     points="695.5,517.5 708.5,535.5 695.5,555.5 695.5,608.5 797.5,571.5 797.5,500.5 695.5,464.5 "
+     id="polygon8851" /><ellipse
+     class="st1"
+     cx="690"
+     cy="724.5"
+     rx="37.5"
+     ry="54"
+     id="ellipse8853" /><g
+     id="g8861"
+     style="display:inline;mix-blend-mode:normal">
+			<line
+   class="st1"
+   x1="937.5"
+   y1="179.5"
+   x2="980.72998"
+   y2="179.5"
+   id="line8855" />
+			<g
+   id="g8859">
+				<polygon
+   class="st2"
+   points="978.77,182.38 989.5,179.5 978.77,176.62 "
+   id="polygon8857" />
+			</g>
+		</g><polyline
+     class="st1"
+     points="466.5,342.5 604.5,342.5 604.5,824.5 689.5,824.5 689.5,778.5  "
+     id="polyline8863"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g8873"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8871">
+			<polyline
+   class="st1"
+   points="25.73,468.5 20.5,468.5 20.5,20.5 1045.5,20.5 1045.5,141.5 1022.5,141.5    "
+   id="polyline8865" />
+			<g
+   id="g8869">
+				<polygon
+   class="st2"
+   points="23.77,465.62 34.5,468.5 23.77,471.38 "
+   id="polygon8867" />
+			</g>
+		</g>
+	</g><g
+     id="g8883"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8881">
+			<line
+   class="st1"
+   x1="584.5"
+   y1="483.5"
+   x2="680.72998"
+   y2="483.5"
+   id="line8875" />
+			<g
+   id="g8879">
+				<polygon
+   class="st2"
+   points="678.77,486.38 689.5,483.5 678.77,480.62 "
+   id="polygon8877" />
+			</g>
+		</g>
+	</g><g
+     id="g8893"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8891">
+			<line
+   class="st1"
+   x1="584.5"
+   y1="558.5"
+   x2="628.72998"
+   y2="558.5"
+   id="line8885" />
+			<g
+   id="g8889">
+				<polygon
+   class="st2"
+   points="626.77,561.38 637.5,558.5 626.77,555.62 "
+   id="polygon8887" />
+			</g>
+		</g>
+	</g><g
+     id="g8907"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8905">
+			<polyline
+   class="st1"
+   points="470.73,714.5 234.5,714.5 234.5,321.5 370.73,321.5    "
+   id="polyline8895" />
+			<g
+   id="g8899">
+				<polygon
+   class="st2"
+   points="468.77,711.62 479.5,714.5 468.77,717.38 "
+   id="polygon8897" />
+			</g>
+			<g
+   id="g8903">
+				<polygon
+   class="st2"
+   points="368.77,324.38 379.5,321.5 368.77,318.62 "
+   id="polygon8901" />
+			</g>
+		</g>
+	</g><rect
+     x="434.5"
+     y="431.5"
+     class="st1"
+     width="150"
+     height="213"
+     id="rect8909"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g8919"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8917">
+			<polyline
+   class="st1"
+   points="434.5,714.5 434.5,811.5 628.5,811.5 628.5,724.5 640.73,724.5    "
+   id="polyline8911" />
+			<g
+   id="g8915">
+				<polygon
+   class="st2"
+   points="638.77,727.38 649.5,724.5 638.77,721.62 "
+   id="polygon8913" />
+			</g>
+		</g>
+	</g><g
+     id="g8929"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8927">
+			<line
+   class="st1"
+   x1="669.5"
+   y1="583.5"
+   x2="679.72998"
+   y2="583.5"
+   id="line8921" />
+			<g
+   id="g8925">
+				<polygon
+   class="st2"
+   points="677.77,586.38 688.5,583.5 677.77,580.62 "
+   id="polygon8923" />
+			</g>
+		</g>
+	</g><path
+     class="st1"
+     d="m 654.5,631.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path8931"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 1008.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -88 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 88 c 0,8.28 -6.72,15 -15,15 z"
+     id="path8933"
+     style="display:inline;mix-blend-mode:normal" /><ellipse
+     class="st1"
+     cx="426.5"
+     cy="322.5"
+     rx="40"
+     ry="98"
+     id="ellipse8935"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g8945"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8943">
+			<line
+   class="st1"
+   x1="234.5"
+   y1="510.5"
+   x2="419.73001"
+   y2="510.5"
+   id="line8937" />
+			<g
+   id="g8941">
+				<polygon
+   class="st2"
+   points="417.77,513.38 428.5,510.5 417.77,507.62 "
+   id="polygon8939" />
+			</g>
+		</g>
+	</g><g
+     id="g8955"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8953">
+			<line
+   class="st1"
+   x1="235"
+   y1="457.5"
+   x2="420.23001"
+   y2="457.5"
+   id="line8947" />
+			<g
+   id="g8951">
+				<polygon
+   class="st2"
+   points="418.27,460.38 429,457.5 418.27,454.62 "
+   id="polygon8949" />
+			</g>
+		</g>
+	</g><g
+     id="g8969"
+     class="addIn"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8967">
+			<polyline
+   class="st1"
+   points="135.73,88.5 83.5,88.5 83.5,468.5 92.23,468.5    "
+   id="polyline8957" />
+			<g
+   id="g8961">
+				<polygon
+   class="st2"
+   points="133.77,85.62 144.5,88.5 133.77,91.38 "
+   id="polygon8959" />
+			</g>
+			<g
+   id="g8965">
+				<polygon
+   class="st2"
+   points="90.27,471.38 101,468.5 90.27,465.62 "
+   id="polygon8963" />
+			</g>
+		</g>
+	</g><g
+     id="g8979"
+     transform="matrix(1.1454824,0,0,1,-131.29791,0)"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8977">
+			<polyline
+   class="st1"
+   points="893.73,93.5 646.5,93.5 646.5,135.5 309.5,135.5    "
+   id="polyline8971" />
+			<g
+   id="g8975">
+				<polygon
+   class="st2"
+   points="902.5,93.5 891.77,96.38 891.77,90.62 "
+   id="polygon8973" />
+			</g>
+		</g>
+	</g><rect
+     x="38.5"
+     y="409.5"
+     class="st1"
+     width="36"
+     height="118"
+     id="rect8981"
+     style="display:inline;mix-blend-mode:normal" /><rect
+     x="103.5"
+     y="445.5"
+     class="st1"
+     width="112"
+     height="160"
+     id="rect8983"
+     style="display:inline;mix-blend-mode:normal" /><polygon
+     class="st1"
+     points="147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 147.5,62.5 147.5,114.5 162.5,135.5 "
+     id="polygon8985"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 923.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -89 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 89 c 0,8.28 -6.72,15 -15,15 z"
+     id="path8987"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g8997"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g8995">
+			<line
+   class="st1"
+   x1="118.5"
+   y1="182.5"
+   x2="135.73"
+   y2="182.5"
+   id="line8989" />
+			<g
+   id="g8993">
+				<polygon
+   class="st2"
+   points="133.77,185.38 144.5,182.5 133.77,179.62 "
+   id="polygon8991" />
+			</g>
+		</g>
+	</g><polyline
+     class="st1"
+     points="743.5,592.5 743.5,724.5 727.5,724.5  "
+     id="polyline1005" /><polygon
+     class="st1"
+     points="695.5,517.5 708.5,535.5 695.5,555.5 695.5,608.5 797.5,571.5 797.5,500.5 695.5,464.5 "
+     id="polygon1007" /><ellipse
+     class="st1"
+     cx="690"
+     cy="724.5"
+     rx="37.5"
+     ry="54"
+     id="ellipse1009" /><g
+     id="g1017"
+     style="display:inline;mix-blend-mode:normal">
+			<line
+   class="st1"
+   x1="937.5"
+   y1="179.5"
+   x2="980.72998"
+   y2="179.5"
+   id="line1011" />
+			<g
+   id="g1015">
+				<polygon
+   class="st2"
+   points="978.77,182.38 989.5,179.5 978.77,176.62 "
+   id="polygon1013" />
+			</g>
+		</g><polyline
+     class="st1"
+     points="466.5,342.5 604.5,342.5 604.5,824.5 689.5,824.5 689.5,778.5  "
+     id="polyline1019"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1029"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1027">
+			<polyline
+   class="st1"
+   points="25.73,468.5 20.5,468.5 20.5,20.5 1045.5,20.5 1045.5,141.5 1022.5,141.5    "
+   id="polyline1021" />
+			<g
+   id="g1025">
+				<polygon
+   class="st2"
+   points="23.77,465.62 34.5,468.5 23.77,471.38 "
+   id="polygon1023" />
+			</g>
+		</g>
+	</g><g
+     id="g1039"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1037">
+			<line
+   class="st1"
+   x1="584.5"
+   y1="483.5"
+   x2="680.72998"
+   y2="483.5"
+   id="line1031" />
+			<g
+   id="g1035">
+				<polygon
+   class="st2"
+   points="678.77,486.38 689.5,483.5 678.77,480.62 "
+   id="polygon1033" />
+			</g>
+		</g>
+	</g><g
+     id="g1053"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1051">
+			<polyline
+   class="st1"
+   points="470.73,714.5 234.5,714.5 234.5,321.5 370.73,321.5    "
+   id="polyline1041" />
+			<g
+   id="g1045">
+				<polygon
+   class="st2"
+   points="468.77,711.62 479.5,714.5 468.77,717.38 "
+   id="polygon1043" />
+			</g>
+			<g
+   id="g1049">
+				<polygon
+   class="st2"
+   points="368.77,324.38 379.5,321.5 368.77,318.62 "
+   id="polygon1047" />
+			</g>
+		</g>
+	</g><rect
+     x="434.5"
+     y="431.5"
+     class="st1"
+     width="150"
+     height="213"
+     id="rect1055"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1065"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1063">
+			<line
+   class="st1"
+   x1="669.5"
+   y1="583.5"
+   x2="679.72998"
+   y2="583.5"
+   id="line1057" />
+			<g
+   id="g1061">
+				<polygon
+   class="st2"
+   points="677.77,586.38 688.5,583.5 677.77,580.62 "
+   id="polygon1059" />
+			</g>
+		</g>
+	</g><path
+     class="st1"
+     d="m 654.5,631.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1067"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 1008.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -88 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 88 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1069"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1079"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1077">
+			<line
+   class="st1"
+   x1="235"
+   y1="457.5"
+   x2="420.23001"
+   y2="457.5"
+   id="line1071" />
+			<g
+   id="g1075">
+				<polygon
+   class="st2"
+   points="418.27,460.38 429,457.5 418.27,454.62 "
+   id="polygon1073" />
+			</g>
+		</g>
+	</g><g
+     id="g1093"
+     class="addIn"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1091">
+			<polyline
+   class="st1"
+   points="135.73,88.5 83.5,88.5 83.5,468.5 92.23,468.5    "
+   id="polyline1081" />
+			<g
+   id="g1085">
+				<polygon
+   class="st2"
+   points="133.77,85.62 144.5,88.5 133.77,91.38 "
+   id="polygon1083" />
+			</g>
+			<g
+   id="g1089">
+				<polygon
+   class="st2"
+   points="90.27,471.38 101,468.5 90.27,465.62 "
+   id="polygon1087" />
+			</g>
+		</g>
+	</g><g
+     id="g1103"
+     transform="matrix(1.1454824,0,0,1,-131.29791,0)"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1101">
+			<polyline
+   class="st1"
+   points="893.73,93.5 646.5,93.5 646.5,135.5 309.5,135.5    "
+   id="polyline1095" />
+			<g
+   id="g1099">
+				<polygon
+   class="st2"
+   points="902.5,93.5 891.77,96.38 891.77,90.62 "
+   id="polygon1097" />
+			</g>
+		</g>
+	</g><rect
+     x="38.5"
+     y="409.5"
+     class="st1"
+     width="36"
+     height="118"
+     id="rect1105"
+     style="display:inline;mix-blend-mode:normal" /><rect
+     x="103.5"
+     y="445.5"
+     class="st1"
+     width="112"
+     height="160"
+     id="rect1107"
+     style="display:inline;mix-blend-mode:normal" /><polygon
+     class="st1"
+     points="147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 147.5,62.5 147.5,114.5 162.5,135.5 "
+     id="polygon1109"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 923.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -89 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 89 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1111"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1121"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1119">
+			<line
+   class="st1"
+   x1="118.5"
+   y1="182.5"
+   x2="135.73"
+   y2="182.5"
+   id="line1113" />
+			<g
+   id="g1117">
+				<polygon
+   class="st2"
+   points="133.77,185.38 144.5,182.5 133.77,179.62 "
+   id="polygon1115" />
+			</g>
+		</g>
+	</g></g><g
+   inkscape:groupmode="layer"
+   id="layer2"
+   inkscape:label="lw"
+   style="display:inline;mix-blend-mode:normal"><g
+     id="g1132">
+		<g
+   id="g1130">
+			<line
+   class="st1"
+   x1="960.5"
+   y1="552.5"
+   x2="983.72998"
+   y2="552.5"
+   id="line1124" />
+			<g
+   id="g1128">
+				<polygon
+   class="st2"
+   points="992.5,552.5 981.77,549.62 981.77,555.38 "
+   id="polygon1126" />
+			</g>
+		</g>
+	</g><g
+     id="g1142">
+		<g
+   id="g1140">
+			<line
+   class="st1"
+   x1="797.5"
+   y1="552.5"
+   x2="820.72998"
+   y2="552.5"
+   id="line1134" />
+			<g
+   id="g1138">
+				<polygon
+   class="st2"
+   points="829.5,552.5 818.77,549.62 818.77,555.38 "
+   id="polygon1136" />
+			</g>
+		</g>
+	</g><rect
+     x="833.5"
+     y="500.5"
+     class="st1"
+     width="127"
+     height="191"
+     id="rect1144" /><polyline
+     class="st1"
+     points="457,386.5 654.5,386.5 654.5,542.5  "
+     id="polyline1146" /><polyline
+     class="st1"
+     points="466.5,321.5 1011.5,321.5 1011.5,540  "
+     id="polyline1148" /><polyline
+     class="st1"
+     points="466.5,296.5 1058.5,296.5 1058.5,724.5 893.5,724.5 893.5,691.5  "
+     id="polyline1150" /><g
+     id="g1160">
+		<g
+   id="g1158">
+			<line
+   class="st1"
+   x1="616.5"
+   y1="614.65997"
+   x2="624.72998"
+   y2="614.65997"
+   id="line1152" />
+			<g
+   id="g1156">
+				<polygon
+   class="st2"
+   points="633.5,614.66 622.77,611.78 622.77,617.54 "
+   id="polygon1154" />
+			</g>
+		</g>
+	</g><ellipse
+     class="st1"
+     cx="521.5"
+     cy="714.5"
+     rx="36"
+     ry="54"
+     id="ellipse1162" /><g
+     id="g1172">
+		<g
+   id="g1170">
+			<polyline
+   class="st1"
+   points="345.85,510.5 345.85,535.5 375.73,535.5    "
+   id="polyline1164" />
+			<g
+   id="g1168">
+				<polygon
+   class="st2"
+   points="384.5,535.5 373.77,532.62 373.77,538.38 "
+   id="polygon1166" />
+			</g>
+		</g>
+	</g><g
+     id="g1182"
+     style="mix-blend-mode:normal">
+		<g
+   id="g1180">
+			<polyline
+   class="st1"
+   points="422.23,618.5 416.5,618.5 416.5,835.5 1038.5,835.5 1038.5,583.5 1027.5,583.5    "
+   id="polyline1174" />
+			<g
+   id="g1178">
+				<polygon
+   class="st2"
+   points="420.27,615.62 431,618.5 420.27,621.38 "
+   id="polygon1176" />
+			</g>
+		</g>
+	</g><polyline
+     class="st1"
+     points="442,413.5 507.5,413.5 507.5,431.5  "
+     id="polyline1184"
+     style="mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 1012.5,627.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1186"
+     style="mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 404.5,608.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1188"
+     style="mix-blend-mode:normal" /><ellipse
+     class="st1"
+     cx="426.5"
+     cy="322.5"
+     rx="40"
+     ry="98"
+     id="ellipse1190"
+     style="display:inline;mix-blend-mode:normal" /><polyline
+     class="st1"
+     points="743.5,592.5 743.5,724.5 727.5,724.5  "
+     id="polyline1192"
+     style="display:inline" /><polygon
+     class="st1"
+     points="797.5,500.5 695.5,464.5 695.5,517.5 708.5,535.5 695.5,555.5 695.5,608.5 797.5,571.5 "
+     id="polygon1194"
+     style="display:inline" /><ellipse
+     class="st1"
+     cx="690"
+     cy="724.5"
+     rx="37.5"
+     ry="54"
+     id="ellipse1196"
+     style="display:inline" /><g
+     id="g1204"
+     style="display:inline;mix-blend-mode:normal">
+			<line
+   class="st1"
+   x1="937.5"
+   y1="179.5"
+   x2="980.72998"
+   y2="179.5"
+   id="line1198" />
+			<g
+   id="g1202">
+				<polygon
+   class="st2"
+   points="989.5,179.5 978.77,176.62 978.77,182.38 "
+   id="polygon1200" />
+			</g>
+		</g><polyline
+     class="st1"
+     points="466.5,342.5 604.5,342.5 604.5,824.5 689.5,824.5 689.5,778.5  "
+     id="polyline1206"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1216"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1214">
+			<polyline
+   class="st1"
+   points="25.73,468.5 20.5,468.5 20.5,20.5 1045.5,20.5 1045.5,141.5 1022.5,141.5    "
+   id="polyline1208" />
+			<g
+   id="g1212">
+				<polygon
+   class="st2"
+   points="34.5,468.5 23.77,471.38 23.77,465.62 "
+   id="polygon1210" />
+			</g>
+		</g>
+	</g><g
+     id="g1226"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1224">
+			<line
+   class="st1"
+   x1="584.5"
+   y1="483.5"
+   x2="680.72998"
+   y2="483.5"
+   id="line1218" />
+			<g
+   id="g1222">
+				<polygon
+   class="st2"
+   points="689.5,483.5 678.77,480.62 678.77,486.38 "
+   id="polygon1220" />
+			</g>
+		</g>
+	</g><g
+     id="g1240"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1238">
+			<polyline
+   class="st1"
+   points="470.73,714.5 234.5,714.5 234.5,321.5 370.73,321.5    "
+   id="polyline1228" />
+			<g
+   id="g1232">
+				<polygon
+   class="st2"
+   points="479.5,714.5 468.77,717.38 468.77,711.62 "
+   id="polygon1230" />
+			</g>
+			<g
+   id="g1236">
+				<polygon
+   class="st2"
+   points="379.5,321.5 368.77,318.62 368.77,324.38 "
+   id="polygon1234" />
+			</g>
+		</g>
+	</g><rect
+     x="434.5"
+     y="431.5"
+     class="st1"
+     width="150"
+     height="213"
+     id="rect1242"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 654.5,631.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -58 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 58 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1244"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 1008.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -88 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 88 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1246"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1256"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1254">
+			<line
+   class="st1"
+   x1="235"
+   y1="457.5"
+   x2="420.23001"
+   y2="457.5"
+   id="line1248" />
+			<g
+   id="g1252">
+				<polygon
+   class="st2"
+   points="429,457.5 418.27,454.62 418.27,460.38 "
+   id="polygon1250" />
+			</g>
+		</g>
+	</g><g
+     id="g1270"
+     class="addIn"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1268">
+			<polyline
+   class="st1"
+   points="135.73,88.5 83.5,88.5 83.5,468.5 92.23,468.5    "
+   id="polyline1258" />
+			<g
+   id="g1262">
+				<polygon
+   class="st2"
+   points="144.5,88.5 133.77,91.38 133.77,85.62 "
+   id="polygon1260" />
+			</g>
+			<g
+   id="g1266">
+				<polygon
+   class="st2"
+   points="101,468.5 90.27,465.62 90.27,471.38 "
+   id="polygon1264" />
+			</g>
+		</g>
+	</g><g
+     id="g1280"
+     transform="matrix(1.1454824,0,0,1,-131.29791,0)"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1278">
+			<polyline
+   class="st1"
+   points="893.73,93.5 646.5,93.5 646.5,135.5 309.5,135.5    "
+   id="polyline1272" />
+			<g
+   id="g1276">
+				<polygon
+   class="st2"
+   points="891.77,96.38 891.77,90.62 902.5,93.5 "
+   id="polygon1274" />
+			</g>
+		</g>
+	</g><rect
+     x="38.5"
+     y="409.5"
+     class="st1"
+     width="36"
+     height="118"
+     id="rect1282"
+     style="display:inline;mix-blend-mode:normal" /><rect
+     x="103.5"
+     y="445.5"
+     class="st1"
+     width="112"
+     height="160"
+     id="rect1284"
+     style="display:inline;mix-blend-mode:normal" /><polygon
+     class="st1"
+     points="147.5,114.5 162.5,135.5 147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 147.5,62.5 "
+     id="polygon1286"
+     style="display:inline;mix-blend-mode:normal" /><path
+     class="st1"
+     d="m 923.5,197.5 v 0 c -8.28,0 -15,-6.72 -15,-15 v -89 c 0,-8.28 6.72,-15 15,-15 v 0 c 8.28,0 15,6.72 15,15 v 89 c 0,8.28 -6.72,15 -15,15 z"
+     id="path1288"
+     style="display:inline;mix-blend-mode:normal" /><g
+     id="g1298"
+     style="display:inline;mix-blend-mode:normal">
+		<g
+   id="g1296">
+			<line
+   class="st1"
+   x1="118.5"
+   y1="182.5"
+   x2="135.73"
+   y2="182.5"
+   id="line1290" />
+			<g
+   id="g1294">
+				<polygon
+   class="st2"
+   points="144.5,182.5 133.77,179.62 133.77,185.38 "
+   id="polygon1292" />
 			</g>
 		</g>
 	</g></g>
