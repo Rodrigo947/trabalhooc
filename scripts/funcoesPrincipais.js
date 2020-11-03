@@ -5,3 +5,8 @@ function retiraBits(final,inicial,instrucao){
     bits = (bits >>> shiftDireita)
     return bits
 }
+
+function add(registradores1,registradores2){
+    
+    return registradorResult
+}

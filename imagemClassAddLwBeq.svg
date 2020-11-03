@@ -15,7 +15,7 @@
    style="enable-background:new 0 0 1080 856;"
    xml:space="preserve"
    id="svg1148"
-   sodipodi:docname="imagemClassAddLw.svg"
+   sodipodi:docname="imagemClassAddLwBeq.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
    id="metadata1154"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -29,16 +29,16 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1512"
-   inkscape:window-height="1040"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
    id="namedview1150"
    showgrid="false"
    inkscape:zoom="0.99299065"
    inkscape:cx="403.04"
    inkscape:cy="372.61176"
-   inkscape:window-x="2208"
-   inkscape:window-y="104"
-   inkscape:window-maximized="0"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
    inkscape:current-layer="Layer_2"
    inkscape:document-rotation="0" />
 <style
@@ -87,7 +87,7 @@
 	</g>
 	<g
    id="g803"
-   class="id lw beq">
+   class="add lw beq">
 		<g
    id="g801">
 			<polyline
