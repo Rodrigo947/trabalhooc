@@ -15,9 +15,7 @@ function instructionMemory() {
   func = retiraBits(5, 0, pc);
   signExtendAux = retiraBits(15, 0, pc);
 
-  control();
-  aluControl();
-  alu();
+
   //signExtend();
   
 }
@@ -38,11 +36,10 @@ function control() {
       break;
 
     //Tipo I
-    //addi
-    case 8:
+    case 8: //addi
       break;
-    //lw
-    case 35:
+
+    case 35: //lw
       RegDst = 1;
       Jump = 0;
       Branch = 0;
@@ -53,11 +50,10 @@ function control() {
       ALUSrc = 1;
       RegWrite = 1;
       break;
-    //sw
-    case 43:
+    case 43: //sw
       break;
-    //beq
-    case 4:
+
+    case 4: //beq
       RegDst = 1; //Nao tenho certeza
       Jump = 0;
       Branch = 1;
@@ -68,13 +64,13 @@ function control() {
       ALUSrc = 0;
       RegWrite = 0;
       break;
-    //bne
-    case 5:
+
+    case 5: //bne
       break;
 
     //Tipo J
-    //j
-    case 2:
+    
+    case 2: //j
       RegDst = 0;
       Jump = 1; //Jump é o unico importante
       Branch = 0;
@@ -85,8 +81,8 @@ function control() {
       ALUSrc = 0;
       RegWrite = 0;
       break;
-    //jal
-    case 3:
+    
+    case 3: //jal
       break;
   }
 }
@@ -94,21 +90,18 @@ function control() {
 
 function registers(writeData) {
   if(RegWrite == 1){
-    if(RegDst == 0){
+    if(RegDst == 0)
       registradores[rt][1] = writeData
-      atualizaRegistrador(rt)
-    }
-    else{
+      
+    else
       registradores[rd][1] = writeData
-      atualizaRegistrador(rd)
-    }
+      
   }
 }
 
 function signExtend() {}
 
 function alu() {
-  var resultado
 
   if (ALUSrc == 0) 
     operando2 = rt
@@ -124,7 +117,7 @@ function alu() {
         //implementaçãoSW
       }
       else {
-      resultado = registradores[rs][1] + registradores[operando2][1] 
+        ALUResult = registradores[rs][1] + registradores[operando2][1] 
       }
       break;
 
@@ -133,42 +126,36 @@ function alu() {
       if(ALUOp==1){
         //implementaçãobeq
       }
-      else resultado = registradores[rs][1] - registradores[operando2][1]
+      else ALUResult = registradores[rs][1] - registradores[operando2][1]
       break
       
     //mult
     case 24:
-      resultado = registradores[rs][1] * registradores[operando2][1]
+      ALUResult = registradores[rs][1] * registradores[operando2][1]
       break
     //div
     case 26:
-      resultado = registradores[rs][1] / registradores[operando2][1]
+      ALUResult = registradores[rs][1] / registradores[operando2][1]
       break
     //and
     case 0:
       //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
       // e a comparação sobra 100010100 (276)
-      resultado = registradores[rs][1] & registradores[operando2][1]
+      ALUResult = registradores[rs][1] & registradores[operando2][1]
       break
     //or
       case 1:
       //Compara se existe 1 em um dos registradores em sequencia.
-      resultado = registradores[rs][1] | registradores[operando2][1]
+      ALUResult = registradores[rs][1] | registradores[operando2][1]
       break
     //slt
       case 7:
       //Se registrador 1 < registrador 2, retorna verdadeiro
       if(registradores[rs][1] < registradores[operando2][1])
-      resultado = 1
-      else resultado = 0
+      ALUResult = 1
+      else ALUResult = 0
       break
   }
-
-  if(MemtoReg == 1)
-    dataMemory(resultado)
-  
-  else
-    registers(resultado)
 
 }
 
@@ -251,12 +238,25 @@ function calcularPC(){
 }
 
 function main() {
+  pc = instrucoes[posicaoPC]
+  instructionMemory()
+  control()
+  aluControl()
+  alu()
+  if(MemtoReg == 1)
+    dataMemory(ALUResult)
+  else
+    registers(ALUResult)
+  posicaoPC++
+  atualizarInterface()
+}
 
-  //while(posicaoPC != instrucoes.length()){
-    pc = instrucoes[posicaoPC]
-    instructionMemory()
+function execucaoTotal() {
+  while(posicaoPC != instrucoes.length)
+    main()
+}
 
-
-  //}
-  
+function passoApasso() {
+  if(posicaoPC != instrucoes.length)
+    main()
 }

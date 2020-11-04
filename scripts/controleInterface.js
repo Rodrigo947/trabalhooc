@@ -11,7 +11,7 @@ xhr.send("");
 function desenhaPC(){
     $('#tabPC').html('')
     for (var i = 0; i < instrucoes.length; i++) {
-        $('#tabPC').append('<tr><td id=instrucoes'+i+'>'+instrucoes[i]+'</td></tr>')
+        $('#tabPC').append('<tr><td id=instrucoes'+i+' class="valorPC">'+instrucoes[i]+'</td></tr>')
     }    
 }
 
@@ -50,12 +50,8 @@ function desenhaRegistradores(){
     registradoresPresentes.sort((a, b) => a - b)
 
     for (var i = 0; i < registradoresPresentes.length; i++) {
-        $('#tabReg').append('<tr><td>'+registradores[registradoresPresentes[i]][0]+'</td><td id=reg'+registradoresPresentes[i]+'>'+registradores[i][1]+'</td></tr>')
+        $('#tabReg').append('<tr><td>'+registradores[registradoresPresentes[i]][0]+'</td><td id=reg'+registradoresPresentes[i]+' class="valorReg">'+registradores[i][1]+'</td></tr>')
     } 
-}
-
-function atualizaRegistrador(num){
-    $('#reg'+num).html(registradores[num][1])
 }
 
 
@@ -75,6 +71,7 @@ function lerComandos(){
             })
             desenhaPC()
             desenhaRegistradores()
+            atualizarInterface()
         }
     }
     else {
@@ -85,6 +82,7 @@ function lerComandos(){
             })
             desenhaPC()
             desenhaRegistradores()
+            atualizarInterface()
         }
         else{
             return false
@@ -93,27 +91,47 @@ function lerComandos(){
     return true
 }
 
-
-function iniciar() {
+function atualizarInterface(){
+    //Atualizar instrução ativa
+    $('.valorPC').each( function (){
+        $(this).removeClass('instrucaoAtiva')
+    })
+    $('#instrucoes'+posicaoPC).addClass('instrucaoAtiva')
     
+    //Atualizar tabela de registradores
+    $('.valorReg').each( function (){
+      id = $( this ).attr('id').substring(3)
+      $( this ).html(registradores[id][1])
+    })
+
+    //Atualizar a descrição da instrução
+    if(posicaoPC != instrucoes.length)
+        traduzirComando()
+    else
+        $('#instrucaoAtual').html('Finalizado')
+}
+
+
+function carregar() {
     if(lerComandos()){
         $('#titulos').hide()
         $('#entradas').hide()
         $('#estados').show()
-        $('#btnComecar').hide()
-        $('#btnReiniciar').show()
-        main()
+        $('#btnCarregar').hide()
+        $('#btns').show()
     }
-    
 }
 
 function reset(){
     instrucoes = []
+    posicaoPC = 0
+    for (let i = 0; i < registradores.length; i++) 
+        registradores[i][1] = 1;
     $('#titulos').show()
     $('#entradas').show()
     $('#estados').hide()
-    $('#btnComecar').show()
-    $('#btnReiniciar').hide()
+    $('#btnCarregar').show()
+    $('#btns').hide()
 }
 
 

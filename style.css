@@ -32,3 +32,8 @@ svg{
     height: 100%;
 }
 
+.instrucaoAtiva{
+    border-color: red !important;
+    border-width: 2px !important;
+}
+

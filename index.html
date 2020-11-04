@@ -62,7 +62,7 @@
             </div>
 
             <div>
-              <h5>Instrução: <span id="instrucao"></span></h5>
+              <h5>Instrução: <span id="instrucaoAtual"></span></h5>
             </div>
           </div>
 
@@ -70,12 +70,27 @@
         </div>
 
         <div class="card-footer text-center">
-          <button id="btnComecar" class="btn btn-primary w-50" type="button" onclick="iniciar()">
-            Começar
+          <button id="btnCarregar" class="btn btn-primary w-50" type="button" onclick="carregar()">
+            Carregar
           </button>
-          <button id="btnReiniciar" class="btn btn-primary w-50" type="button" onclick="reset()" style="display: none;">
-            Reiniciar
-          </button>
+          <div id="btns" class="row"  style="display: none;">
+            <div class="col-4">
+              <button id="btnPlay" class="btn btn-primary w-50" type="button" onclick="execucaoTotal()" >
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="col-4">
+              <button id="btnPlay" class="btn btn-primary w-50" type="button" onclick="passoApasso()" >
+                <i class="fas fa-step-forward"></i>
+              </button>
+            </div>
+            <div class="col-4">
+              <button id="btnReiniciar" class="btn btn-primary w-50" type="button" onclick="reset()">
+                <i class="fas fa-stop"></i>
+              </button>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -88,6 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/79eaf79cc8.js" crossorigin="anonymous"></script>
     <script src="scripts/variaveisGlobais.js"></script>
     <script src="scripts/dicionario.js"></script>
     <script src="scripts/controleInterface.js"></script>
