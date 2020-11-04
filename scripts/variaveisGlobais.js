@@ -4,6 +4,8 @@ for (let i = 0; i < 32; i++) {
     registradores[i] = [];
     registradores[i][1] = 1;
 }
+//registradores[19][1] = 3;
+
 registradores[0][0] = '$zero'
 registradores[1][0] = '$at'
 registradores[2][0] = '$v0'
