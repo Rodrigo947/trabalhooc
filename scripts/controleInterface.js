@@ -10,8 +10,8 @@ xhr.send("");
 
 function desenhaPC(){
     $('#tabPC').html('')
-    for (var i = 0; i < pc.length; i++) {
-        $('#tabPC').append('<tr><td id=pc'+i+'>'+pc[i]+'</td></tr>')
+    for (var i = 0; i < instrucoes.length; i++) {
+        $('#tabPC').append('<tr><td id=instrucoes'+i+'>'+instrucoes[i]+'</td></tr>')
     }    
 }
 
@@ -19,7 +19,7 @@ function desenhaRegistradores(){
     $('#tabReg').html('')
     var registradoresPresentes = []
     
-    pc.forEach(instrucao => {
+    instrucoes.forEach(instrucao => {
         var opcode = retiraBits(31,26,instrucao)
         
         if(opcode != 2 && opcode != 3){ //Se for do tipo J não possui registrador
@@ -50,8 +50,12 @@ function desenhaRegistradores(){
     registradoresPresentes.sort((a, b) => a - b)
 
     for (var i = 0; i < registradoresPresentes.length; i++) {
-        $('#tabReg').append('<tr><td>'+registradores[registradoresPresentes[i]][0]+'</td><td id=$'+registradoresPresentes[i]+'>0</td></tr>')
+        $('#tabReg').append('<tr><td>'+registradores[registradoresPresentes[i]][0]+'</td><td id=reg'+registradoresPresentes[i]+'>'+registradores[i][1]+'</td></tr>')
     } 
+}
+
+function atualizaRegistrador(num){
+    $('#reg'+num).html(registradores[num][1])
 }
 
 
@@ -67,7 +71,7 @@ function lerComandos(){
             var fileArr = fr.result.split('\n');
             
             fileArr.forEach(element => {
-                pc.push(parseInt(element,2))
+                instrucoes.push(parseInt(element,2))
             })
             desenhaPC()
             desenhaRegistradores()
@@ -77,7 +81,7 @@ function lerComandos(){
         if(textarea.value != ''){
             var array = textarea.value.split('\n')
             array.forEach(element => {
-                pc.push(parseInt(element,2))
+                instrucoes.push(parseInt(element,2))
             })
             desenhaPC()
             desenhaRegistradores()
@@ -90,7 +94,7 @@ function lerComandos(){
 }
 
 
-function main() {
+function iniciar() {
     
     if(lerComandos()){
         $('#titulos').hide()
@@ -98,13 +102,13 @@ function main() {
         $('#estados').show()
         $('#btnComecar').hide()
         $('#btnReiniciar').show()
-
+        main()
     }
     
 }
 
 function reset(){
-    pc = []
+    instrucoes = []
     $('#titulos').show()
     $('#entradas').show()
     $('#estados').hide()
