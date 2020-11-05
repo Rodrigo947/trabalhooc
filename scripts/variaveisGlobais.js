@@ -2,7 +2,7 @@ var instrucoes = []
 var registradores= []
 for (let i = 0; i < 32; i++) {
     registradores[i] = [];
-    registradores[i][1] = 1;
+    registradores[i][1] = 9;
 }
 //registradores[21][1] = 3;
 
@@ -20,6 +20,7 @@ ALUOp = 0
 MEMWrite = 0
 ALUSrc = 0
 RegWrite = 0
+
 //Botei aqui como -1 para testar addi
 sinalAluControl = -1
 

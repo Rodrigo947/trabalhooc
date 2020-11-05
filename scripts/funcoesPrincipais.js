@@ -13,7 +13,7 @@ function instructionMemory() {
   rd = retiraBits(15, 11, pc);
   sa = retiraBits(10, 6, pc);
   func = retiraBits(5, 0, pc);
-  //signExtendAux = retiraBits(15, 0, pc);
+  //signExtendAux = retiraBits(15, 0, pc); comentei pra testar addi
   immediate=retiraBits(15, 0, pc);
 
 
@@ -44,7 +44,7 @@ function control() {
       Branch = 0;
       MemRead = 0;
       MemtoReg = 0;
-      ALUOp = 0;
+      ALUOp = 0; //nao tem
       MEMWrite = 0;
       ALUSrc = 1;
       RegWrite = 1;
@@ -61,15 +61,25 @@ function control() {
       ALUSrc = 1;
       RegWrite = 1;
       break;
+      
     case 43: //sw
-      break;
+    RegDst = 0; //X 
+    Jump = 0;
+    Branch = 0;
+    MemRead = 0;
+    MemtoReg = 0; //X 
+    ALUOp = 0;
+    MEMWrite = 1;
+    ALUSrc = 1;
+    RegWrite = 0;
+    break;
 
     case 4: //beq
-      RegDst = 1; //Nao tenho certeza
+      RegDst = 0; //Nao tenho certeza
       Jump = 0;
       Branch = 1;
       MemRead = 0;
-      MemtoReg = 1; //Nao tenho certeza
+      MemtoReg = 0; //Nao tenho certeza
       ALUOp = 1;
       MEMWrite = 0;
       ALUSrc = 0;
@@ -77,10 +87,10 @@ function control() {
       break;
 
     case 5: //bne
+    //Necessarias mudanças no hardware ref: https://www.youtube.com/watch?v=SwvcWATBiHE
       break;
 
     //Tipo J
-    
     case 2: //j
       RegDst = 0;
       Jump = 1; //Jump é o unico importante
@@ -94,6 +104,7 @@ function control() {
       break;
     
     case 3: //jal
+    //Necessarias mudanças no hardware para esse caso ref: https://www.youtube.com/watch?v=onJWhQAs-Jg
       break;
   }
 }
@@ -115,10 +126,12 @@ function alu() {
 
   if (ALUSrc == 0) 
     operando2 = rt
-  else
+  else //mais condições para operando2, nao coloquei porque são 5:35 da manhã KEKW ITU
     //operando2=signExtendAux Mudei para immediate pra teste do addi
-    operando2 = immediate  //
+    //operando2 = immediate
+    operando2 = sa  //
     //NemEntra no AluControl
+
   if(opcode == 8) ALUResult = registradores[rs][1]+operando2
 
   //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
@@ -135,11 +148,12 @@ function alu() {
         ALUResult = registradores[rs][1] + registradores[operando2][1] 
       }
       break;
+
     //sub
-    
     case 6:
       if(ALUOp==1){
         //implementaçãobeq
+        ALUResult = 0
       }
       else ALUResult = registradores[rs][1] - registradores[operando2][1]
       break
@@ -148,31 +162,43 @@ function alu() {
     case 24:
       ALUResult = registradores[rs][1] * registradores[operando2][1]
       break
+
     //div
     case 26:
       ALUResult = registradores[rs][1] / registradores[operando2][1]
       break
+
     //and
     case 0:
       //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
       // e a comparação sobra 100010100 (276)
       ALUResult = registradores[rs][1] & registradores[operando2][1]
       break
+
     //or
       case 1:
       //Compara se existe 1 em um dos registradores em sequencia.
       ALUResult = registradores[rs][1] | registradores[operando2][1]
       break
-    //slt
+     
       case 7:
+        //sll coloquei no mesmo case de slt pra facilitar mas nao tem sinalAluControl
+        //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
+        //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
+      if(func==0){
+        ALUResult=registradores[rt][1] << sa
+      }
+      //slt
       //Se registrador 1 < registrador 2, retorna verdadeiro
-      if(registradores[rs][1] < registradores[operando2][1])
+      else if(registradores[rs][1] < registradores[operando2][1])
       ALUResult = 1
       else ALUResult = 0
       break
+      
+      //add 
       case 30:
-        ALUResult = registradores[rs][1]+operando2
-        break
+      ALUResult = registradores[rs][1]+operando2
+      break
       //case 8:
         //  ALUResult = registradores[rs][1]+operando2
           //break   
@@ -213,6 +239,7 @@ function aluControl() {
         sinalAluControl = 7
         break;
       case 0:
+        sinalAluControl = 7
         break;
       case 8:
         break;
