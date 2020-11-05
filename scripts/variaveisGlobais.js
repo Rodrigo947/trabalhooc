@@ -20,7 +20,8 @@ ALUOp = 0
 MEMWrite = 0
 ALUSrc = 0
 RegWrite = 0
-sinalAluControl = 0
+//Botei aqui como -1 para testar addi
+sinalAluControl = -1
 
 //Separação de instrução por segmentos de bits
 opcode = 0
@@ -30,3 +31,4 @@ rd = 0
 sa = 0
 func = 0
 signExtendAux = 0
+immediate = 0

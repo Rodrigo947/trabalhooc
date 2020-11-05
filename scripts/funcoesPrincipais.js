@@ -13,7 +13,9 @@ function instructionMemory() {
   rd = retiraBits(15, 11, pc);
   sa = retiraBits(10, 6, pc);
   func = retiraBits(5, 0, pc);
-  signExtendAux = retiraBits(15, 0, pc);
+  //signExtendAux = retiraBits(15, 0, pc);
+  immediate=retiraBits(15, 0, pc);
+
 
 
   //signExtend();
@@ -37,6 +39,15 @@ function control() {
 
     //Tipo I
     case 8: //addi
+      RegDst = 0;
+      Jump = 0;
+      Branch = 0;
+      MemRead = 0;
+      MemtoReg = 0;
+      ALUOp = 0;
+      MEMWrite = 0;
+      ALUSrc = 1;
+      RegWrite = 1;
       break;
 
     case 35: //lw
@@ -95,7 +106,6 @@ function registers(writeData) {
       
     else
       registradores[rd][1] = writeData
-      
   }
 }
 
@@ -106,7 +116,12 @@ function alu() {
   if (ALUSrc == 0) 
     operando2 = rt
   else
-    operando2 = signExtendAux
+    //operando2=signExtendAux Mudei para immediate pra teste do addi
+    operando2 = immediate  //
+    //NemEntra no AluControl
+  if(opcode == 8) ALUResult = registradores[rs][1]+operando2
+
+  //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
   switch (sinalAluControl) {
     //add LW SW
     case 2:
@@ -120,8 +135,8 @@ function alu() {
         ALUResult = registradores[rs][1] + registradores[operando2][1] 
       }
       break;
-
     //sub
+    
     case 6:
       if(ALUOp==1){
         //implementaçãobeq
@@ -155,6 +170,12 @@ function alu() {
       ALUResult = 1
       else ALUResult = 0
       break
+      case 30:
+        ALUResult = registradores[rs][1]+operando2
+        break
+      //case 8:
+        //  ALUResult = registradores[rs][1]+operando2
+          //break   
   }
 
 }
@@ -210,6 +231,9 @@ function aluControl() {
       case 43:
         sinalAluControl = 2
         break
+      //case 8:
+        //sinalAluControl = 8
+        //break;
     }
   }
   if(ALUOp == 1){
