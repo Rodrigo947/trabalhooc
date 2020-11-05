@@ -128,9 +128,11 @@ function alu() {
     operando2 = rt
   else //mais condições para operando2, nao coloquei porque são 5:35 da manhã KEKW ITU
     //operando2=signExtendAux Mudei para immediate pra teste do addi
-    //operando2 = immediate
-    operando2 = sa  //
+    
     //NemEntra no AluControl
+    //operando2 = immediate
+    
+    operando2 = sa  //
 
   if(opcode == 8) ALUResult = registradores[rs][1]+operando2
 
