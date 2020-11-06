@@ -47,9 +47,15 @@
           </form>
 
           <div id="estados" class="h-100" style="display: none;">
-            <h6 class="text-center">PC</h6>
+            <h6 class="text-center">Memória de Instruções</h6>
             <div class="divTables table-responsive">
               <table class="table table-bordered table-striped table-sm ">
+                <thead>
+                  <tr>
+                    <th class="text-center">Valor</th>
+                    <th class="text-center">Endereço</th>
+                  </tr>
+                </tbody>
                 <tbody id="tabPC" class="text-center"></tbody>
               </table>
             </div>
@@ -57,6 +63,12 @@
             <h6 class="text-center">Registradores</h6>
             <div class="divTables table-responsive">
               <table class="table table-bordered table-striped table-sm ">
+                <thead>
+                  <tr>
+                    <th class="text-center">Registrador</th>
+                    <th class="text-center">Valor</th>
+                  </tr>
+                </thead>
                 <tbody id="tabReg"></tbody>
               </table>
             </div>
@@ -104,8 +116,9 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/79eaf79cc8.js" crossorigin="anonymous"></script>
-    <script src="scripts/variaveisGlobais.js"></script>
+    <script src="scripts/edMemory.js"></script>
     <script src="scripts/dicionario.js"></script>
+    <script src="scripts/variaveisGlobais.js"></script>
     <script src="scripts/controleInterface.js"></script>
     <script src="scripts/funcoesPrincipais.js"></script>
  

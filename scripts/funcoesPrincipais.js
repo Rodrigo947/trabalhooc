@@ -7,19 +7,15 @@ function retiraBits(final, inicial, instrucao) {
 }
 
 function instructionMemory() {
-  opcode = retiraBits(31, 26, pc);
-  rs = retiraBits(25, 21, pc);
-  rt = retiraBits(20, 16, pc);
-  rd = retiraBits(15, 11, pc);
-  sa = retiraBits(10, 6, pc);
-  func = retiraBits(5, 0, pc);
-  //signExtendAux = retiraBits(15, 0, pc); comentei pra testar addi
-  immediate=retiraBits(15, 0, pc);
+  instrucao = memoria_de_instrucoes.get(pc)
+  opcode = retiraBits(31, 26, instrucao);
+  rs = retiraBits(25, 21, instrucao);
+  rt = retiraBits(20, 16, instrucao);
+  rd = retiraBits(15, 11, instrucao);
+  sa = retiraBits(10, 6, instrucao);
+  func = retiraBits(5, 0, instrucao);
+  immediate = retiraBits(15, 0, instrucao);
 
-
-
-  //signExtend();
-  
 }
 
 function control() {
@@ -110,13 +106,13 @@ function control() {
 }
 
 
-function registers(writeData) {
+function registers() {
   if(RegWrite == 1){
     if(RegDst == 0)
-      registradores[rt][1] = writeData
+      banco_de_registradores[rt].set(0,ALUResult) 
       
     else
-      registradores[rd][1] = writeData
+      banco_de_registradores[rd].set(0,ALUResult)
   }
 }
 
@@ -125,7 +121,7 @@ function signExtend() {}
 function alu() {
 
   if (ALUSrc == 0) 
-    operando2 = rt
+    operando2 = banco_de_registradores[rs].get(0)
   else //mais condições para operando2, nao coloquei porque são 5:35 da manhã KEKW ITU
     //operando2=signExtendAux Mudei para immediate pra teste do addi
     
@@ -134,7 +130,7 @@ function alu() {
     
     operando2 = sa  //
 
-  if(opcode == 8) ALUResult = registradores[rs][1]+operando2
+  if(opcode == 8) ALUResult = banco_de_registradores[rs].get(0) + operando2
 
   //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
   switch (sinalAluControl) {
@@ -147,7 +143,7 @@ function alu() {
         //implementaçãoSW
       }
       else {
-        ALUResult = registradores[rs][1] + registradores[operando2][1] 
+        ALUResult = banco_de_registradores[rs].get(0) + operando2
       }
       break;
 
@@ -157,30 +153,30 @@ function alu() {
         //implementaçãobeq
         ALUResult = 0
       }
-      else ALUResult = registradores[rs][1] - registradores[operando2][1]
+      else ALUResult = banco_de_registradores[rs].get(0) - operando2
       break
       
     //mult
     case 24:
-      ALUResult = registradores[rs][1] * registradores[operando2][1]
+      ALUResult = banco_de_registradores[rs].get(0) * operando2
       break
 
     //div
     case 26:
-      ALUResult = registradores[rs][1] / registradores[operando2][1]
+      ALUResult = banco_de_registradores[rs].get(0) / operando2
       break
 
     //and
     case 0:
       //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
       // e a comparação sobra 100010100 (276)
-      ALUResult = registradores[rs][1] & registradores[operando2][1]
+      ALUResult = banco_de_registradores[rs].get(0) & operando2
       break
 
     //or
       case 1:
       //Compara se existe 1 em um dos registradores em sequencia.
-      ALUResult = registradores[rs][1] | registradores[operando2][1]
+      ALUResult = banco_de_registradores[rs].get(0) | operando2
       break
      
       case 7:
@@ -188,18 +184,18 @@ function alu() {
         //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
         //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
       if(func==0){
-        ALUResult=registradores[rt][1] << sa
+        ALUResult = banco_de_registradores[rt].get(0) << sa
       }
       //slt
       //Se registrador 1 < registrador 2, retorna verdadeiro
-      else if(registradores[rs][1] < registradores[operando2][1])
+      else if(banco_de_registradores[rs].get(0) < operando2)
       ALUResult = 1
       else ALUResult = 0
       break
       
       //add 
       case 30:
-      ALUResult = registradores[rs][1]+operando2
+      ALUResult = banco_de_registradores[rs].get(0) + operando2
       break
       //case 8:
         //  ALUResult = registradores[rs][1]+operando2
@@ -281,7 +277,7 @@ function aluControl() {
 function dataMemory() {}
 
 function calcularPC(){
-  posicaoPC += 1
+  pc += 1
   if(Jump == 0){
 
   }
@@ -291,7 +287,6 @@ function calcularPC(){
 }
 
 function main() {
-  pc = instrucoes[posicaoPC]
   instructionMemory()
   control()
   aluControl()
@@ -300,16 +295,7 @@ function main() {
     dataMemory(ALUResult)
   else
     registers(ALUResult)
-  posicaoPC++
+  pc = pc+4
   atualizarInterface()
 }
 
-function execucaoTotal() {
-  while(posicaoPC != instrucoes.length)
-    main()
-}
-
-function passoApasso() {
-  if(posicaoPC != instrucoes.length)
-    main()
-}

@@ -33,7 +33,6 @@ svg{
 }
 
 .instrucaoAtiva{
-    border-color: red !important;
-    border-width: 2px !important;
+    background-color: #abd2ab !important;
 }
 
