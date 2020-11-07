@@ -37,7 +37,7 @@ function iniciarVarGlobais(){
     banco_de_registradores = []
     for (let i = 0; i < 32; i++){ 
         banco_de_registradores.push(new Memory())
-        banco_de_registradores[i].set(0*4,1)
+        banco_de_registradores[i].set(0,1)
     }
     
     //registradores[21][1] = 3;

@@ -153,7 +153,8 @@ function execucaoTotal() {
   var size = memoria_de_instrucoes.size();
   var enderecoFinal = memoria_de_instrucoes.allKeys()[size - 1];
 
-  while (parseInt(pc) < parseInt(enderecoFinal)) main();
+  while (parseInt(pc) < parseInt(enderecoFinal)) 
+    main();
 
   $(".valorPC").each(function () {
     $(this).removeClass("instrucaoAtiva");

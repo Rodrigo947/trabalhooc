@@ -1,5 +1,5 @@
 class Memory{
-
+     
     constructor(){
         this.memoria = {}
     }

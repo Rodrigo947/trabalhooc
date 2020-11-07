@@ -124,13 +124,13 @@ function alu() {
     operando2 = banco_de_registradores[rs].get(0)
   else //mais condições para operando2, nao coloquei porque são 5:35 da manhã KEKW ITU
     //operando2=signExtendAux Mudei para immediate pra teste do addi
-    
     //NemEntra no AluControl
     //operando2 = immediate
-    
-    operando2 = sa  //
-
-  if(opcode == 8) ALUResult = banco_de_registradores[rs].get(0) + operando2
+    operando2 = immediate  
+  
+  //addi
+  if(opcode == 8) 
+    ALUResult = banco_de_registradores[rs].get(0) + operando2
 
   //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
   switch (sinalAluControl) {
