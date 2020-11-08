@@ -1,3 +1,4 @@
+instrucaoAnterior = 'a'
 function traduzirComando() {
   var instrucaoTraduzida;
   var opcode = retiraBits(31, 26, Memoria_RAM.get(pc));
@@ -8,12 +9,7 @@ function traduzirComando() {
   var func = retiraBits(5, 0, Memoria_RAM.get(pc));
   var immediate = retiraBits(15, 0, Memoria_RAM.get(pc));
   var desvio = retiraBits(25, 0, Memoria_RAM.get(pc));
-  Object.values(dicComandosR).forEach(element => {
-    $("."+element).css("stroke","")
-  });
-  Object.values(dicComandosIJ).forEach(element => {
-    $("."+element).css("stroke","")
-  });
+
   if (opcode == 0) {
     //Tipo R
     switch (func) {
@@ -44,7 +40,11 @@ function traduzirComando() {
           dicRegistradores[rt];
         break;
     }
+    
+    $("."+instrucaoAnterior).css("stroke","")
     $("."+dicComandosR[func]).css("stroke","red")
+    instrucaoAnterior = dicComandosR[func]
+
   } 
   else {
     switch (opcode) {
@@ -90,10 +90,14 @@ function traduzirComando() {
           immediate;
         break;
     }
+    
+    $("."+instrucaoAnterior).css("stroke","")
     $("."+dicComandosIJ[opcode]).css("stroke","red")
+    instrucaoAnterior = dicComandosIJ[opcode]
   }
 
   $("#instrucaoAtual").html(instrucaoTraduzida);
+  
 
 }
 
