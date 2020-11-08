@@ -1,3 +1,5 @@
+//Testa a imagem, ta com add e lw, posso ter esquecido alguma linha
+
 function retiraBits(final, inicial, instrucao) {
   var shiftEsquerda = 31 - final;
   var bits = (instrucao << shiftEsquerda) >>> 0;
