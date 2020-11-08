@@ -107,6 +107,18 @@ function control() {
 
 
 function registers() {
+  //Seta operando 1
+  if(func==0)operando1=Memoria_RAM.get(rt*4)
+  else operando1=Memoria_RAM.get(rs*4)
+
+  //Seta operando 2
+  if (ALUSrc == 0) 
+  operando2 = Memoria_RAM.get(rt*4)
+  else if(func==0)
+  operando2 = sa
+  else operando2=immediate
+
+  //seta o resultado
   if(RegWrite == 1){
     if(RegDst == 0)
       Memoria_RAM.set(rt*4,ALUResult) 
@@ -119,18 +131,9 @@ function registers() {
 function signExtend() {}
 
 function alu() {
-
-  if (ALUSrc == 0) 
-    operando2 = Memoria_RAM.get(rs*4)
-  else //mais condições para operando2, nao coloquei porque são 5:35 da manhã KEKW ITU
-    //operando2=signExtendAux Mudei para immediate pra teste do addi
-    //NemEntra no AluControl
-    //operando2 = immediate
-    operando2 = immediate  
-  
   //addi
   if(opcode == 8) 
-    ALUResult = Memoria_RAM.get(rs*4) + operando2
+    ALUResult = operando1 + operando2
 
   //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
   switch (sinalAluControl) {
@@ -143,7 +146,7 @@ function alu() {
         //implementaçãoSW
       }
       else {
-        ALUResult = Memoria_RAM.get(rs*4) + operando2
+        ALUResult = operando1 + operando2
       }
       break;
 
@@ -153,49 +156,50 @@ function alu() {
         //implementaçãobeq
         ALUResult = 0
       }
-      else ALUResult = Memoria_RAM.get(rs*4) - operando2
+      else ALUResult = operando1 - operando2
       break
       
     //mult
-    case 24:
-      ALUResult = Memoria_RAM.get(rs*4) * operando2
+    case 3:
+      ALUResult = operando1 * operando2
       break
 
     //div
-    case 26:
-      ALUResult = Memoria_RAM.get(rs*4) / operando2
+    case 4:
+      ALUResult = operando1 / operando2
       break
 
     //and
     case 0:
       //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
       // e a comparação sobra 100010100 (276)
-      ALUResult = Memoria_RAM.get(rs*4) & operando2
+      ALUResult = operando1 & operando2
       break
 
     //or
       case 1:
       //Compara se existe 1 em um dos registradores em sequencia.
-      ALUResult = Memoria_RAM.get(rs*4) | operando2
+      ALUResult = operando1 | operando2
       break
      
       case 7:
-        //sll coloquei no mesmo case de slt pra facilitar mas nao tem sinalAluControl
-        //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
-        //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
-      if(func==0){
-        ALUResult = Memoria_RAM.get(rs*4) << sa
-      }
       //slt
       //Se registrador 1 < registrador 2, retorna verdadeiro
-      else if(Memoria_RAM.get(rs*4) < operando2)
+      if(operando1 < operando2)
       ALUResult = 1
       else ALUResult = 0
       break
       
+      case 8:
+        //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
+        //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
+      if(func==0){
+        ALUResult = operando1 << operando2
+      }
+      break;
       //add 
       case 30:
-      ALUResult = Memoria_RAM.get(rs*4) + operando2
+      ALUResult = operando1 + operando2
       break
       //case 8:
         //  ALUResult = registradores[rs][1]+operando2
@@ -218,11 +222,11 @@ function aluControl() {
         break;
       //mult
       case 24:
-        sinalAluControl = 24
+        sinalAluControl = 3
         break;
       //div
       case 26:
-        sinalAluControl = 26
+        sinalAluControl = 4
         break;
       //and
       case 36:
@@ -237,7 +241,7 @@ function aluControl() {
         sinalAluControl = 7
         break;
       case 0:
-        sinalAluControl = 7
+        sinalAluControl = 8
         break;
       case 8:
         break;
@@ -289,6 +293,7 @@ function calcularPC(){
 function main() {
   instructionMemory()
   control()
+  registers()
   aluControl()
   alu()
   if(MemtoReg == 1)
