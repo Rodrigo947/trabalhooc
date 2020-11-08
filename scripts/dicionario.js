@@ -8,7 +8,12 @@ function traduzirComando() {
   var func = retiraBits(5, 0, Memoria_RAM.get(pc));
   var immediate = retiraBits(15, 0, Memoria_RAM.get(pc));
   var desvio = retiraBits(25, 0, Memoria_RAM.get(pc));
-
+  Object.values(dicComandosR).forEach(element => {
+    $("."+element).css("stroke","")
+  });
+  Object.values(dicComandosIJ).forEach(element => {
+    $("."+element).css("stroke","")
+  });
   if (opcode == 0) {
     //Tipo R
     switch (func) {
@@ -39,7 +44,9 @@ function traduzirComando() {
           dicRegistradores[rt];
         break;
     }
-  } else {
+    $("."+dicComandosR[func]).css("stroke","red")
+  } 
+  else {
     switch (opcode) {
       case 2:
       case 3: //tipo J
@@ -83,9 +90,11 @@ function traduzirComando() {
           immediate;
         break;
     }
+    $("."+dicComandosIJ[opcode]).css("stroke","red")
   }
 
   $("#instrucaoAtual").html(instrucaoTraduzida);
+
 }
 
 function decimal4hex(num){
