@@ -7,7 +7,7 @@ function retiraBits(final, inicial, instrucao) {
 }
 
 function instructionMemory() {
-  instrucao = memoria_de_instrucoes.get(pc)
+  instrucao = Memoria_RAM.get(pc)
   opcode = retiraBits(31, 26, instrucao);
   rs = retiraBits(25, 21, instrucao);
   rt = retiraBits(20, 16, instrucao);
@@ -109,10 +109,10 @@ function control() {
 function registers() {
   if(RegWrite == 1){
     if(RegDst == 0)
-      banco_de_registradores[rt].set(0,ALUResult) 
+      Memoria_RAM.set(rt*4,ALUResult) 
       
     else
-      banco_de_registradores[rd].set(0,ALUResult)
+      Memoria_RAM.set(rd*4,ALUResult) 
   }
 }
 
@@ -121,7 +121,7 @@ function signExtend() {}
 function alu() {
 
   if (ALUSrc == 0) 
-    operando2 = banco_de_registradores[rs].get(0)
+    operando2 = Memoria_RAM.get(rs*4)
   else //mais condições para operando2, nao coloquei porque são 5:35 da manhã KEKW ITU
     //operando2=signExtendAux Mudei para immediate pra teste do addi
     //NemEntra no AluControl
@@ -130,7 +130,7 @@ function alu() {
   
   //addi
   if(opcode == 8) 
-    ALUResult = banco_de_registradores[rs].get(0) + operando2
+    ALUResult = Memoria_RAM.get(rs*4) + operando2
 
   //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
   switch (sinalAluControl) {
@@ -143,7 +143,7 @@ function alu() {
         //implementaçãoSW
       }
       else {
-        ALUResult = banco_de_registradores[rs].get(0) + operando2
+        ALUResult = Memoria_RAM.get(rs*4) + operando2
       }
       break;
 
@@ -153,30 +153,30 @@ function alu() {
         //implementaçãobeq
         ALUResult = 0
       }
-      else ALUResult = banco_de_registradores[rs].get(0) - operando2
+      else ALUResult = Memoria_RAM.get(rs*4) - operando2
       break
       
     //mult
     case 24:
-      ALUResult = banco_de_registradores[rs].get(0) * operando2
+      ALUResult = Memoria_RAM.get(rs*4) * operando2
       break
 
     //div
     case 26:
-      ALUResult = banco_de_registradores[rs].get(0) / operando2
+      ALUResult = Memoria_RAM.get(rs*4) / operando2
       break
 
     //and
     case 0:
       //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
       // e a comparação sobra 100010100 (276)
-      ALUResult = banco_de_registradores[rs].get(0) & operando2
+      ALUResult = Memoria_RAM.get(rs*4) & operando2
       break
 
     //or
       case 1:
       //Compara se existe 1 em um dos registradores em sequencia.
-      ALUResult = banco_de_registradores[rs].get(0) | operando2
+      ALUResult = Memoria_RAM.get(rs*4) | operando2
       break
      
       case 7:
@@ -184,18 +184,18 @@ function alu() {
         //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
         //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
       if(func==0){
-        ALUResult = banco_de_registradores[rt].get(0) << sa
+        ALUResult = Memoria_RAM.get(rs*4) << sa
       }
       //slt
       //Se registrador 1 < registrador 2, retorna verdadeiro
-      else if(banco_de_registradores[rs].get(0) < operando2)
+      else if(Memoria_RAM.get(rs*4) < operando2)
       ALUResult = 1
       else ALUResult = 0
       break
       
       //add 
       case 30:
-      ALUResult = banco_de_registradores[rs].get(0) + operando2
+      ALUResult = Memoria_RAM.get(rs*4) + operando2
       break
       //case 8:
         //  ALUResult = registradores[rs][1]+operando2

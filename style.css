@@ -36,3 +36,14 @@ svg{
     background-color: #abd2ab !important;
 }
 
+
+#tituloTabela2{
+    width: 90%;
+}
+
+.input-group-text {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+

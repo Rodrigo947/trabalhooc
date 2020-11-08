@@ -1,13 +1,13 @@
 function traduzirComando() {
   var instrucaoTraduzida;
-  var opcode = retiraBits(31, 26, memoria_de_instrucoes.get(pc));
-  var rs = retiraBits(25, 21, memoria_de_instrucoes.get(pc));
-  var rt = retiraBits(20, 16, memoria_de_instrucoes.get(pc));
-  var rd = retiraBits(15, 11, memoria_de_instrucoes.get(pc));
-  var sa = retiraBits(10, 6, memoria_de_instrucoes.get(pc));
-  var func = retiraBits(5, 0, memoria_de_instrucoes.get(pc));
-  var immediate = retiraBits(15, 0, memoria_de_instrucoes.get(pc));
-  var desvio = retiraBits(25, 0, memoria_de_instrucoes.get(pc));
+  var opcode = retiraBits(31, 26, Memoria_RAM.get(pc));
+  var rs = retiraBits(25, 21, Memoria_RAM.get(pc));
+  var rt = retiraBits(20, 16, Memoria_RAM.get(pc));
+  var rd = retiraBits(15, 11, Memoria_RAM.get(pc));
+  var sa = retiraBits(10, 6, Memoria_RAM.get(pc));
+  var func = retiraBits(5, 0, Memoria_RAM.get(pc));
+  var immediate = retiraBits(15, 0, Memoria_RAM.get(pc));
+  var desvio = retiraBits(25, 0, Memoria_RAM.get(pc));
 
   if (opcode == 0) {
     //Tipo R

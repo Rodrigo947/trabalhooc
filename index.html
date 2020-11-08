@@ -30,8 +30,8 @@
     <div class="col-4 main">
       <div class="card h-100 main">
         
-        <div class="card-title text-center m-3">
-          <h3 id="titulos">Entradas de comandos</h3>
+        <div id="titulos" class="card-title text-center m-3">
+          <h3 >Entradas de comandos</h3>
         </div>
         
         <div class="card-body">
@@ -60,18 +60,39 @@
               </table>
             </div>
 
-            <h6 class="text-center">Registradores</h6>
-            <div class="divTables table-responsive">
+            
+            
+            <div class="input-group">
+              <h6 id="tituloTabela2" class="text-center">Banco de Registradores</h6>
+              <div class="input-group-prepend">
+                <button class="btn btn-primary input-group-text" onclick="trocarTabelas()"><i class="fas fa-arrow-alt-circle-right"></i></button>
+              </div>
+            </div>
+            <div id="divBancoReg" class="divTables table-responsive">
               <table class="table table-bordered table-striped table-sm ">
                 <thead>
                   <tr>
                     <th class="text-center">Registrador</th>
                     <th class="text-center">Valor</th>
+                    <th class="text-center">Endereço</th>
                   </tr>
                 </thead>
                 <tbody id="tabReg"></tbody>
               </table>
             </div>
+           
+            <div id="divBancoMem" class="divTables table-responsive" style="display: none;">
+              <table class="table table-bordered table-striped table-sm ">
+                <thead>
+                  <tr>
+                    <th class="text-center">Valor</th>
+                    <th class="text-center">Endereço</th>
+                  </tr>
+                </thead>
+                <tbody id="tabMem"></tbody>
+              </table>
+            </div>
+           
 
             <div>
               <h5>Instrução: <span id="instrucaoAtual"></span></h5>
