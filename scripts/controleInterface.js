@@ -73,9 +73,9 @@ function desenhaRegistradores() {
     );
   }
 }
-quantidade = 0;
+
 function desenhaMemoria() {
-  
+  var quantidade = 0;
   $("#tabMem").html("");
   
   for (var i = enderecoFinalInstrucoes+4; i <= enderecoFinalInstrucoes+(256*4); i += 4) {
@@ -83,7 +83,7 @@ function desenhaMemoria() {
     Memoria_RAM.set(i,quantidade)
     $("#tabMem").append(
       '<tr>' +
-        '<td id=mem"'+i+'" class="valorMem text-center" >' +
+        '<td id="mem'+(i)+'" class="valorMem text-center" >' +
           Memoria_RAM.get(i) +
         "</td>" +
         "<td class='text-center'>" +
@@ -156,7 +156,7 @@ function atualizarInterface() {
   //Atualizar de memória de dados
   $(".valorMem").each(function () {
     id = $(this).attr("id").substring(3);
-    $(this).html(Memoria_RAM.get(id));
+    $(this).html(Memoria_RAM.get(parseInt(id)));
   });
 
 }

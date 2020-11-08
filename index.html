@@ -62,10 +62,12 @@
 
             
             
-            <div class="input-group">
-              <h6 id="tituloTabela2" class="text-center">Banco de Registradores</h6>
-              <div class="input-group-prepend">
-                <button class="btn btn-primary input-group-text" onclick="trocarTabelas()"><i class="fas fa-arrow-alt-circle-right"></i></button>
+            <div class="row">
+              <div class="col-10 pr-0">
+                <h6 id="tituloTabela2" class="text-center">Banco de Registradores</h6>
+              </div>
+              <div class="col-2 pl-0">
+                <button class="btn btn-primary h-100 w-100" type="button" onclick="trocarTabelas()"><i class="fas fa-arrow-alt-circle-right"></i></button>
               </div>
             </div>
             <div id="divBancoReg" class="divTables table-responsive">
@@ -104,7 +106,7 @@
 
         <div class="card-footer text-center">
           <button id="btnCarregar" class="btn btn-primary w-50" type="button" onclick="carregar()">
-            Carregar
+            CARREGAR
           </button>
           <div id="btns" class="row"  style="display: none;">
             <div class="col-4">
