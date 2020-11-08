@@ -1,3 +1,4 @@
+instrucaoAnterior = 'a'
 function traduzirComando() {
   var instrucaoTraduzida;
   var opcode = retiraBits(31, 26, Memoria_RAM.get(pc));
@@ -39,7 +40,13 @@ function traduzirComando() {
           dicRegistradores[rt];
         break;
     }
-  } else {
+    
+    $("."+instrucaoAnterior).css("stroke","")
+    $("."+dicComandosR[func]).css("stroke","red")
+    instrucaoAnterior = dicComandosR[func]
+
+  } 
+  else {
     switch (opcode) {
       case 2:
       case 3: //tipo J
@@ -83,9 +90,15 @@ function traduzirComando() {
           immediate;
         break;
     }
+    
+    $("."+instrucaoAnterior).css("stroke","")
+    $("."+dicComandosIJ[opcode]).css("stroke","red")
+    instrucaoAnterior = dicComandosIJ[opcode]
   }
 
   $("#instrucaoAtual").html(instrucaoTraduzida);
+  
+
 }
 
 function decimal4hex(num){

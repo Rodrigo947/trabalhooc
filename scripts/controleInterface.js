@@ -190,6 +190,7 @@ function execucaoTotal() {
   $(".valorPC").each(function () {
     $(this).removeClass("instrucaoAtiva")
   })
+  traduzirComando();
   $("#instrucaoAtual").html("Finalizado")
 }
 
@@ -249,4 +250,12 @@ $('#textarea').on("change",function (){
 
     $('#textarea').css('font-size', '')
   }
+})
+
+$('#fileinput').on("change",function(){
+  if($(this).val()!='')
+    $('#nomeDoArquivo').html($(this).val().substring(12))
+  else
+    $('#nomeDoArquivo').html('Escolha um arquivo')
+
 })

@@ -53,4 +53,25 @@ svg{
     line-height: 1.2;
 }
 
+.custom-file-input{
+    cursor: pointer;
+}
+
+.custom-file-input:lang(pt) ~ .custom-file-label::after {
+    content: "Procurar";
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;    
+    
+}
+
+.custom-file-input:hover ~ .custom-file-label::after{
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+
+
+
+
 
