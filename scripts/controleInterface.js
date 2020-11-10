@@ -191,6 +191,7 @@ function execucaoTotal() {
   $(".valorPC").each(function () {
     $(this).removeClass("instrucaoAtiva")
   })
+  traduzirComando();
   $("#instrucaoAtual").html("Finalizado")
 }
 

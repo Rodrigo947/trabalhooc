@@ -15,6 +15,7 @@ function instructionMemory() {
   sa = retiraBits(10, 6, instrucao);
   func = retiraBits(5, 0, instrucao);
   immediate = retiraBits(15, 0, instrucao);
+  immediateJ = retiraBits(25, 0, instrucao);
 
 }
 
@@ -123,85 +124,158 @@ function control() {
 
 
 function registers() {
-  //Seta operando 1
-  if(func==0)operando1=Memoria_RAM.get(rt*4)
-  else operando1=Memoria_RAM.get(rs*4)
+  
+  ReadData1 = Memoria_RAM.get(rs*4)
+  ReadData2 = Memoria_RAM.get(rt*4)
 
-  //Seta operando 2
-  if (ALUSrc == 0) 
-  operando2 = Memoria_RAM.get(rt*4)
-  else if(func==0)
-  operando2 = sa
-  else operando2=immediate
-
-  //seta o resultado
+  //Definindo o Write Data
+  var WriteData = 0
+  switch (MemtoReg) {
+    case 0:
+      WriteData = ALUResult
+      break;
+    
+    case 1:
+      WriteData = ReadData
+      break;
+    
+    case 2:
+      WriteData = pc + 4
+      break;
+  }
+  //Definindo o Write Register
   if(RegWrite == 1){
-    if(RegDst == 0)
-      Memoria_RAM.set(rt*4,ALUResult) 
+    var WriteRegister = 0
+    switch (RegDst) {
+      case 0:
+        WriteRegister = rt
+        break;
       
-    else
-      Memoria_RAM.set(rd*4,ALUResult) 
+      case 1:
+        WriteRegister = rd
+        break;
+      
+      case 2:
+        WriteRegister = 31
+        break;
+    }
+    Memoria_RAM.set(WriteRegister*4,WriteData)
   }
 }
 
-function signExtend() {}
+function signExtend() {
+  var binario = immediate.toString(2)
+
+  while(binario.length < 32)
+    binario = '0'+ binario
+  
+  SignExtend = parseInt(binario,2);
+}
+
+function aluControl() {
+  //tipoR
+  if (ALUOp == 2) { 
+    switch (func) {
+      
+      case 32: //add
+        AluControl = 2
+      break;
+      
+      case 34: //sub
+        AluControl = 6
+        break;
+      
+      case 24: //mult
+        AluControl = 3
+        break;
+      
+      case 26: //div
+        AluControl = 4
+        break;
+      
+      case 36: //and
+        AluControl = 0
+        break;
+       
+      case 37: //or
+        AluControl = 1
+        break;
+      
+      case 42: //slt
+        AluControl = 7
+        break;
+      
+      case 0: //sll
+        AluControl = 8
+        break;
+    }
+    return 0
+  }
+
+  //TipoI
+  //lw, sw ,addi
+  if(ALUOp == 0){
+    AluControl = 2
+    return 0
+  }
+
+  //beq, bne
+  if(ALUOp == 1){
+    AluControl = 6
+    return 0
+  }
+
+}
 
 function alu() {
-  //addi
-  if(opcode == 8) 
-    ALUResult = operando1 + operando2
+  if(ALUSrc == 0){
+    operando2 = ReadData2
+  }
+  else{
+    operando2 = immediate;
+  }
 
-  //Se inicializar alucontrol = 0 ele sempre enta aqui por causa do AND
-  switch (sinalAluControl) {
-    //add LW SW
-    case 2:
-      if(ALUOp == 0 && opcode == 35){
-        //implementaçãoLW
-      }
-      if(ALUOp == 0 && opcode == 43){
-        //implementaçãoSW
-      }
-      else {
-        ALUResult = operando1 + operando2
-      }
+
+  switch (AluControl) {
+    
+    case 2: //add, addi, LW, SW
+
+      ALUResult = ReadData1 + operando2
+  
       break;
 
-    //sub
-    case 6:
+    case 6: //sub
       if(ALUOp==1){
         //implementaçãobeq
         ALUResult = 0
       }
-      else ALUResult = operando1 - operando2
+      else ALUResult = ReadData1 - operando2
       break
       
-    //mult
-    case 3:
-      ALUResult = operando1 * operando2
+    case 3: //mult
+      ALUResult = ReadData1 * operando2
       break
 
-    //div
-    case 4:
-      ALUResult = operando1 / operando2
+    case 4:  //div
+      ALUResult = ReadData1 / operando2
       break
 
-    //and
-    case 0:
+    case 0: //and
       //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
       // e a comparação sobra 100010100 (276)
-      ALUResult = operando1 & operando2
+      ALUResult = ReadData1 & operando2
       break
 
-    //or
-      case 1:
+    
+      case 1: //or
       //Compara se existe 1 em um dos registradores em sequencia.
-      ALUResult = operando1 | operando2
+      ALUResult = ReadData1 | operando2
       break
      
-      case 7:
-      //slt
+      case 7: //slt
+      
       //Se registrador 1 < registrador 2, retorna verdadeiro
-      if(operando1 < operando2)
+      if(ReadData1 < operando2)
       ALUResult = 1
       else ALUResult = 0
       break
@@ -210,88 +284,16 @@ function alu() {
         //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
         //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
       if(func==0){
-        ALUResult = operando1 << operando2
+        ALUResult = ReadData1 << operando2
       }
       break;
       //add 
       case 30:
-      ALUResult = operando1 + operando2
+      ALUResult = ReadData1 + operando2
       break
       //case 8:
-        //  ALUResult = registradores[rs][1]+operando2
+        //  ALUResult = registradores[rs][1]+ReadData2
           //break   
-  }
-
-}
-
-function aluControl() {
-  //tipoR
-  if (ALUOp == 2) {
-    switch (func) {
-      //add
-      case 32:
-        sinalAluControl = 2
-      break;
-      //sub
-      case 34:
-        sinalAluControl = 6
-        break;
-      //mult
-      case 24:
-        sinalAluControl = 3
-        break;
-      //div
-      case 26:
-        sinalAluControl = 4
-        break;
-      //and
-      case 36:
-        sinalAluControl = 0
-        break;
-      //or
-      case 37:
-        sinalAluControl = 1
-        break;
-      //slt
-      case 42:
-        sinalAluControl = 7
-        break;
-      //sll
-      case 0:
-        sinalAluControl = 8
-        break;
-      //jr
-      case 8:
-        break;
-    }
-  }
-
-
-  //TipoI
-  //lw sw
-  if(ALUOp == 0){
-    switch (opcode){
-      //lw
-      case 35:
-        sinalAluControl = 2
-        break
-      case 43:
-        sinalAluControl = 2
-        break
-      //case 8:
-        //sinalAluControl = 8
-        //break;
-    }
-  }
-  if(ALUOp == 1){
-    //beq
-    sinalAluControl = 6
-  }
-
-  //TipoJ
-  //j
-  if(opcode == 2){
-    //Implementação J
   }
 
 }
@@ -312,12 +314,11 @@ function main() {
   instructionMemory()
   control()
   registers()
+  signExtend()
   aluControl()
   alu()
-  if(MemtoReg == 1)
-    dataMemory(ALUResult)
-  else
-    registers(ALUResult)
+  dataMemory()
+  registers()
   pc = pc+4
   atualizarInterface()
 }
