@@ -2,12 +2,7 @@ instrucaoAnterior = 'a'
 function traduzirComando() {
 
   if(pc > enderecoFinalInstrucoes){
-    Object.values(dicComandosR).forEach((element) =>{
-      $("."+element).css("stroke","black")
-    })
-    Object.values(dicComandosIJ).forEach((element) =>{
-      $("."+element).css("stroke","black")
-    })
+    resetImagem()
     $("#instrucaoAtual").html("Finalizado")
     return 0
   }

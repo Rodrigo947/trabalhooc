@@ -175,6 +175,7 @@ function carregar() {
 
 function reset() {
   iniciarVarGlobais()
+  resetImagem()
   $("#titulos").show()
   $("#entradas").show()
   $("#estados").hide()
@@ -230,3 +231,12 @@ $('#fileinput').on("change",function(){
     $('#nomeDoArquivo').html('Escolha um arquivo')
 
 })
+
+function resetImagem() {
+  Object.values(dicComandosR).forEach((element) =>{
+    $("."+element).css("stroke","black")
+  })
+  Object.values(dicComandosIJ).forEach((element) =>{
+    $("."+element).css("stroke","black")
+  })
+}
