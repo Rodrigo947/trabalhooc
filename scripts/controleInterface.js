@@ -190,7 +190,6 @@ function execucaoTotal() {
   $(".valorPC").each(function () {
     $(this).removeClass("instrucaoAtiva")
   })
-  traduzirComando();
   $("#instrucaoAtual").html("Finalizado")
 }
 
@@ -198,14 +197,12 @@ function passoApasso() {
 
   if (pc <= enderecoFinalInstrucoes) {
     main();
-    if(pc <= enderecoFinalInstrucoes)
-      traduzirComando();
-    else{
-      $("#instrucaoAtual").html("Finalizado")
-      $(".valorPC").each(function () {
-        $(this).removeClass("instrucaoAtiva")
-      })
-    } 
+    traduzirComando();
+  } 
+  else{
+    $(".valorPC").each(function () {
+      $(this).removeClass("instrucaoAtiva")
+    })
   } 
 }
 

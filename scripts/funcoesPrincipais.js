@@ -1,5 +1,3 @@
-//Testa a imagem, ta com add e lw, posso ter esquecido alguma linha
-
 function retiraBits(final, inicial, instrucao) {
   var shiftEsquerda = 31 - final;
   var bits = (instrucao << shiftEsquerda) >>> 0;
@@ -42,7 +40,7 @@ function control() {
       Branch = 0;
       MemRead = 0;
       MemtoReg = 0;
-      ALUOp = 0; //nao tem
+      ALUOp = 0; 
       MEMWrite = 0;
       ALUSrc = 1;
       RegWrite = 1;
@@ -61,11 +59,11 @@ function control() {
       break;
       
     case 43: //sw
-      RegDst = 0; //X 
+      RegDst = 0; 
       Jump = 0;
       Branch = 0;
       MemRead = 0;
-      MemtoReg = 0; //X 
+      MemtoReg = 0; 
       ALUOp = 0;
       MEMWrite = 1;
       ALUSrc = 1;
@@ -110,7 +108,6 @@ function control() {
       break;
     
     case 3: //jal
-    //Necessarias mudanças no hardware para esse caso ref: https://www.youtube.com/watch?v=onJWhQAs-Jg
       RegDst = 2;
       Jump = 1; 
       Branch = 0;

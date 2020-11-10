@@ -1,5 +1,18 @@
 instrucaoAnterior = 'a'
 function traduzirComando() {
+
+  if(pc > enderecoFinalInstrucoes){
+    Object.values(dicComandosR).forEach((element) =>{
+      $("."+element).css("stroke","black")
+    })
+    Object.values(dicComandosIJ).forEach((element) =>{
+      $("."+element).css("stroke","black")
+    })
+    $("#instrucaoAtual").html("Finalizado")
+    return 0
+  }
+
+
   var instrucaoTraduzida;
   var opcode = retiraBits(31, 26, Memoria_RAM.get(pc));
   var rs = retiraBits(25, 21, Memoria_RAM.get(pc));
@@ -41,9 +54,8 @@ function traduzirComando() {
         break;
     }
     
-    $("."+instrucaoAnterior).css("stroke","")
+    $("."+instrucaoAnterior).css("stroke","black")
     $("."+dicComandosR[func]).css("stroke","red")
-    $("."+dicComandosR[func]).css("opacity","1")
     instrucaoAnterior = dicComandosR[func]
 
   } 
@@ -92,14 +104,13 @@ function traduzirComando() {
         break;
     }
     
-    $("."+instrucaoAnterior).css("stroke","")
+    $("."+instrucaoAnterior).css("stroke","black")
     $("."+dicComandosIJ[opcode]).css("stroke","red")
     instrucaoAnterior = dicComandosIJ[opcode]
   }
 
   $("#instrucaoAtual").html(instrucaoTraduzida);
   
-
 }
 
 function decimal4hex(num){
