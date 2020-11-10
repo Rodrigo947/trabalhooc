@@ -43,6 +43,7 @@ function traduzirComando() {
     
     $("."+instrucaoAnterior).css("stroke","")
     $("."+dicComandosR[func]).css("stroke","red")
+    $("."+dicComandosR[func]).css("opacity","1")
     instrucaoAnterior = dicComandosR[func]
 
   } 
