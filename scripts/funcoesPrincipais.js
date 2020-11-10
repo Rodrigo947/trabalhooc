@@ -61,23 +61,23 @@ function control() {
       break;
       
     case 43: //sw
-    RegDst = 0; //X 
-    Jump = 0;
-    Branch = 0;
-    MemRead = 0;
-    MemtoReg = 0; //X 
-    ALUOp = 0;
-    MEMWrite = 1;
-    ALUSrc = 1;
-    RegWrite = 0;
-    break;
+      RegDst = 0; //X 
+      Jump = 0;
+      Branch = 0;
+      MemRead = 0;
+      MemtoReg = 0; //X 
+      ALUOp = 0;
+      MEMWrite = 1;
+      ALUSrc = 1;
+      RegWrite = 0;
+      break;
 
     case 4: //beq
-      RegDst = 0; //Nao tenho certeza
+      RegDst = 0; 
       Jump = 0;
       Branch = 1;
       MemRead = 0;
-      MemtoReg = 0; //Nao tenho certeza
+      MemtoReg = 0; 
       ALUOp = 1;
       MEMWrite = 0;
       ALUSrc = 0;
@@ -85,7 +85,15 @@ function control() {
       break;
 
     case 5: //bne
-    //Necessarias mudanças no hardware ref: https://www.youtube.com/watch?v=SwvcWATBiHE
+      RegDst = 0;
+      Jump = 0;
+      Branch = 1;
+      MemRead = 0;
+      MemtoReg = 0; 
+      ALUOp = 1;
+      MEMWrite = 0;
+      ALUSrc = 0;
+      RegWrite = 0;
       break;
 
     //Tipo J
@@ -103,6 +111,15 @@ function control() {
     
     case 3: //jal
     //Necessarias mudanças no hardware para esse caso ref: https://www.youtube.com/watch?v=onJWhQAs-Jg
+      RegDst = 2;
+      Jump = 1; 
+      Branch = 0;
+      MemRead = 0;
+      MemtoReg = 2; 
+      ALUOp = 0;
+      MEMWrite = 0;
+      ALUSrc = 0;
+      RegWrite = 1;
       break;
   }
 }
@@ -242,9 +259,11 @@ function aluControl() {
       case 42:
         sinalAluControl = 7
         break;
+      //sll
       case 0:
         sinalAluControl = 8
         break;
+      //jr
       case 8:
         break;
     }
