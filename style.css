@@ -1,6 +1,6 @@
 body { margin:0;
     line-height: 1.5;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: Consolas, monospace, "Courier New" !important;
 }
 .main{
@@ -71,6 +71,36 @@ svg{
     border-color: #005cbf;
 }
 
+
+/* Barra de rolagem */
+.scrollable{
+    overflow-y: auto;
+    max-height: 511px;
+}
+
+.scrollable .card{
+    margin: 0px;
+    border: none;
+    min-height: 510px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+}
+  
+::-webkit-scrollbar-thumb {
+
+    background: rgb(138, 136, 136);
+    border: 1px solid #aaa;
+}
 
 
 
