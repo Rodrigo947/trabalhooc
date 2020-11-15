@@ -11,11 +11,11 @@ xhr.send("");
 
 function desenhaPC() {
   $("#tabPC").html("");
-  for (var i = 128; i <= enderecoFinalInstrucoes; i += 4) {
+  for (var i = 0; i <= enderecoFinalInstrucoes; i += 4) {
     $("#tabPC").append(
       '<tr class="valorPC">' +
         '<td id="instrucoes' + i +'" >' +
-          Memoria_RAM.get(i) +
+          memoria_de_instrucoes.get(i) +
         "</td>" +
         "<td>" +
           decimal4hex(i) +
@@ -29,18 +29,18 @@ function desenhaRegistradores() {
   $("#tabReg").html("");
   var registradoresPresentes = [];
 
-  for (let i = 128; i <= enderecoFinalInstrucoes; i += 4) {
+  for (let i = 0; i <= enderecoFinalInstrucoes; i += 4) {
     
-    var opcode = retiraBits(31, 26, Memoria_RAM.get(i));
+    var opcode = retiraBits(31, 26, memoria_de_instrucoes.get(i));
 
     if (opcode != 2 && opcode != 3) {
       //Se for do tipo J não possui registrador
       if (opcode == 0) {
         // Instruções do tipo R tem 3 registradores
         var rsrtrd = [];
-        rsrtrd.push(retiraBits(25, 21, Memoria_RAM.get(i)));
-        rsrtrd.push(retiraBits(20, 16, Memoria_RAM.get(i)));
-        rsrtrd.push(retiraBits(15, 11, Memoria_RAM.get(i)));
+        rsrtrd.push(retiraBits(25, 21, memoria_de_instrucoes.get(i)));
+        rsrtrd.push(retiraBits(20, 16, memoria_de_instrucoes.get(i)));
+        rsrtrd.push(retiraBits(15, 11, memoria_de_instrucoes.get(i)));
 
         rsrtrd.forEach((reg) => {
           if (!registradoresPresentes.includes(reg))
@@ -49,8 +49,8 @@ function desenhaRegistradores() {
       } else {
         //Instruções do tipo I tem 2 registradores
         var rsrt = [];
-        rsrt.push(retiraBits(25, 21, Memoria_RAM.get(i)));
-        rsrt.push(retiraBits(20, 16, Memoria_RAM.get(i)));
+        rsrt.push(retiraBits(25, 21, memoria_de_instrucoes.get(i)));
+        rsrt.push(retiraBits(20, 16, memoria_de_instrucoes.get(i)));
 
         rsrt.forEach((reg) => {
           if (!registradoresPresentes.includes(reg))
@@ -66,7 +66,7 @@ function desenhaRegistradores() {
     $("#tabReg").append(
       "<tr>" +
         "<td>" +dicRegistradores[registradoresPresentes[i]] +"</td>" +
-        "<td id=reg" +registradoresPresentes[i]+' class="valorReg text-center">' + Memoria_RAM.get(registradoresPresentes[i]*4) +
+        "<td id=reg" +registradoresPresentes[i]+' class="valorReg text-center">' + memoria_de_instrucoes.get(registradoresPresentes[i]*4) +
         "</td>" +
         "<td class='text-center'>"+ decimal4hex(registradoresPresentes[i]*4) + "</td>" +
         "</tr>"
@@ -74,17 +74,14 @@ function desenhaRegistradores() {
   }
 }
 
-function desenhaMemoria() {
-  var quantidade = 0;
+function desenhaMemoriaDados() {
+
   $("#tabMem").html("");
-  
-  for (var i = enderecoFinalInstrucoes+4; i <= enderecoFinalInstrucoes+(256*4); i += 4) {
-    quantidade++;
-    Memoria_RAM.set(i,quantidade)
+  for (var i = 0; i <= 63; i += 4) {
     $("#tabMem").append(
       '<tr>' +
         '<td id="mem'+(i)+'" class="valorMem text-center" >' +
-          Memoria_RAM.get(i) +
+          memoria_de_dados.get(i*4) +
         "</td>" +
         "<td class='text-center'>" +
           decimal4hex(i) +
@@ -106,14 +103,14 @@ function lerComandos() {
       var fileArr = fr.result.split("\n");
 
       fileArr.forEach((element) => {
-        Memoria_RAM.set(enderecoFinalInstrucoes, parseInt(element, 2));
+        memoria_de_instrucoes.set(enderecoFinalInstrucoes, parseInt(element, 2));
         enderecoFinalInstrucoes += 4;
       })
       enderecoFinalInstrucoes -=4;
       
       desenhaPC()
       desenhaRegistradores()
-      desenhaMemoria()
+      desenhaMemoriaDados()
       atualizarInterface()
       traduzirComando()
     }
@@ -121,14 +118,14 @@ function lerComandos() {
     if (textarea.value != "") {
       var array = textarea.value.split("\n");
       array.forEach((element) => {
-        Memoria_RAM.set(enderecoFinalInstrucoes, parseInt(element, 2));
+        memoria_de_instrucoes.set(enderecoFinalInstrucoes, parseInt(element, 2));
         enderecoFinalInstrucoes += 4;
       });
       enderecoFinalInstrucoes -=4;
       
       desenhaPC()
       desenhaRegistradores()
-      desenhaMemoria()
+      desenhaMemoriaDados()
       atualizarInterface()
       traduzirComando()
     } else {
@@ -150,13 +147,13 @@ function atualizarInterface() {
   //Atualizar tabela banco de registradores
   $(".valorReg").each(function () {
     id = $(this).attr("id").substring(3);
-    $(this).html(Memoria_RAM.get(id*4));
+    $(this).html(banco_de_registradores.get(id*4));
   });
 
   //Atualizar de memória de dados
   $(".valorMem").each(function () {
     id = $(this).attr("id").substring(3);
-    $(this).html(Memoria_RAM.get(parseInt(id)));
+    $(this).html(memoria_de_dados.get(parseInt(id)));
   });
 
 }

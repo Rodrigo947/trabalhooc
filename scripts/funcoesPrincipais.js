@@ -6,8 +6,12 @@ function retiraBits(final, inicial, instrucao) {
   return bits;
 }
 
+function addPC(){
+  pc += 4
+}
+
 function instructionMemory() {
-  instrucao = Memoria_RAM.get(pc)
+  instrucao = memoria_de_instrucoes.get(pc)
   opcode = retiraBits(31, 26, instrucao);
   rs = retiraBits(25, 21, instrucao);
   rt = retiraBits(20, 16, instrucao);
@@ -29,7 +33,7 @@ function control() {
       MemRead = 0;
       MemtoReg = 0;
       ALUOp = 2;
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 1;
       break;
@@ -42,7 +46,7 @@ function control() {
       MemRead = 0;
       MemtoReg = 0;
       ALUOp = 0; 
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 1;
       RegWrite = 1;
       break;
@@ -54,7 +58,7 @@ function control() {
       MemRead = 1;
       MemtoReg = 1;
       ALUOp = 0;
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 1;
       RegWrite = 1;
       break;
@@ -66,7 +70,7 @@ function control() {
       MemRead = 0;
       MemtoReg = 0; 
       ALUOp = 0;
-      MEMWrite = 1;
+      MemWrite = 1;
       ALUSrc = 1;
       RegWrite = 0;
       break;
@@ -78,7 +82,7 @@ function control() {
       MemRead = 0;
       MemtoReg = 0; 
       ALUOp = 1;
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 0;
       break;
@@ -90,7 +94,7 @@ function control() {
       MemRead = 0;
       MemtoReg = 0; 
       ALUOp = 1;
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 0;
       break;
@@ -98,12 +102,12 @@ function control() {
     //Tipo J
     case 2: //j
       RegDst = 0;
-      Jump = 1; //Jump é o unico importante
+      Jump = 1; 
       Branch = 0;
       MemRead = 0;
       MemtoReg = 0; 
       ALUOp = 0;
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 0;
       break;
@@ -115,7 +119,7 @@ function control() {
       MemRead = 0;
       MemtoReg = 2; 
       ALUOp = 0;
-      MEMWrite = 0;
+      MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 1;
       break;
@@ -125,27 +129,13 @@ function control() {
 
 function registers() {
   
-  ReadData1 = Memoria_RAM.get(rs*4)
-  ReadData2 = Memoria_RAM.get(rt*4)
+  ReadData1 = banco_de_registradores.get(rs*4)
+  ReadData2 = banco_de_registradores.get(rt*4)
 
-  //Definindo o Write Data
-  var WriteData = 0
-  switch (MemtoReg) {
-    case 0:
-      WriteData = ALUResult
-      break;
-    
-    case 1:
-      WriteData = ReadData
-      break;
-    
-    case 2:
-      WriteData = pc + 4
-      break;
-  }
   //Definindo o Write Register
   if(RegWrite == 1){
     var WriteRegister = 0
+    //MUX depois do Data Memory
     switch (RegDst) {
       case 0:
         WriteRegister = rt
@@ -159,8 +149,26 @@ function registers() {
         WriteRegister = 31
         break;
     }
-    Memoria_RAM.set(WriteRegister*4,WriteData)
+    banco_de_registradores.set(WriteRegister*4,WriteData)
   }
+//Definindo o Write Data  
+  var WriteData = 0
+  //MUX antes do Registers
+  switch (MemtoReg) {
+    case 0:
+      WriteData = ALUResult
+      break;
+    
+    case 1:
+      WriteData = ReadData
+      break;
+    
+    case 2:
+      WriteData = pc
+      break;
+  }
+
+
 }
 
 function signExtend() {
@@ -228,89 +236,91 @@ function aluControl() {
 }
 
 function alu() {
+  //MUX antes da ALU
   if(ALUSrc == 0){
     operando2 = ReadData2
   }
   else{
     operando2 = immediate;
   }
-
+  //------
 
   switch (AluControl) {
     
-    case 2: //add, addi, LW, SW
-
+    case 2: //add
       ALUResult = ReadData1 + operando2
-  
       break;
 
     case 6: //sub
-      if(ALUOp==1){
-        //implementaçãobeq
-        ALUResult = 0
-      }
-      else ALUResult = ReadData1 - operando2
+      ALUResult = ReadData1 - operando2
       break
       
     case 3: //mult
       ALUResult = ReadData1 * operando2
       break
 
-    case 4:  //div
+    case 4: //div
       ALUResult = ReadData1 / operando2
       break
 
     case 0: //and
-      //AddBitWise é diferente, ele confere os bits e retorna só os comuns, faz o exemplo como resultado com os bits: reg1 110110110 (438) com reg2 1100011101(797)
-      // e a comparação sobra 100010100 (276)
       ALUResult = ReadData1 & operando2
       break
 
-    
-      case 1: //or
-      //Compara se existe 1 em um dos registradores em sequencia.
+    case 1: //or
       ALUResult = ReadData1 | operando2
       break
      
-      case 7: //slt
-      
-      //Se registrador 1 < registrador 2, retorna verdadeiro
-      if(ReadData1 < operando2)
-      ALUResult = 1
-      else ALUResult = 0
+    case 7: //slt
+      ALUResult = ReadData1 < operando2
       break
       
-      case 8:
-        //Pelo teste tá funcionando com a instrução 00000000000010100100100100000000
-        //Ele descola 4 bits, com registrador setado em 9 (0000 1001) depois da operação fica 144(1001 0000)
-      if(func==0){
-        ALUResult = ReadData1 << operando2
-      }
+    case 8: //sll
+      ALUResult = ReadData1 << operando2
       break;
-      //add 
-      case 30:
-      ALUResult = ReadData1 + operando2
-      break
-      //case 8:
-        //  ALUResult = registradores[rs][1]+ReadData2
-          //break   
   }
+
+  if(ALUResult == 0)
+    Zero = 1
+  else 
+    Zero = 0
 
 }
 
-function dataMemory() {}
+function dataMemory() {
+  var Address = ALUResult
+  var WriteData = ReadData2
+  if(MemWrite) //sw
+    memoria_de_dados.set(Address,WriteData)
+  if(MemtoReg) //lw
+    ReadData = memoria_de_dados.get(Address)
+}
 
-function calcularPC(){
-  pc += 1
-  if(Jump == 0){
+function atualizaPC(){
+  //MUX superior mais a direita
+  switch (Jump) {
+    
+    case 0: 
+      //MUX superior a esquerda
+      if(Branch) // bne e beq
+        pc = pc + (SignExtend << 2) >>> 0
+      break;
 
-  }
-  else {
-
+    case 1: // Jal, J
+      immediateJ = (immediateJ << 2) >>> 0
+      pc = ((pc << 28) >>> 0) | immediateJ
+      break;
+    
+    case 2: //Jr
+      pc = ReadData1
+      break;
   }
 }
+
+
 
 function main() {
+  addPC()
   instructionMemory()
   control()
   registers()
@@ -319,7 +329,7 @@ function main() {
   alu()
   dataMemory()
   registers()
-  pc = pc+4
+  atualizaPC()
   atualizarInterface()
 }
 

@@ -1,12 +1,18 @@
 function iniciarVarGlobais(){
-    Memoria_RAM = new Memory()
+    memoria_de_instrucoes = new Memory()
+    banco_de_registradores = new Memory()
+    memoria_de_dados = new Memory()
 
-    pc = 128 //As instruções sempre inciam do endereço 128 ou 0x000080
-    enderecoFinalInstrucoes = 128
+    pc = 0 //As instruções sempre inciam do endereço 128 ou 0x000080
+    enderecoFinalInstrucoes = 0
     
     //Banco de Registradores
-    for (let i = 0; i < 32; i ++){ 
-        Memoria_RAM.set(i*4,0)
+    for (let i = 0; i <= 31; i ++){ 
+        banco_de_registradores.set(i*4,0)
+    }
+    //Memoria de dados
+    for (let i = 0; i <= 63; i ++){ 
+        memoria_de_dados.set(i*4,i)
     }
 
     //Separação de instrução por segmentos de bits
@@ -26,7 +32,7 @@ function iniciarVarGlobais(){
     MemRead = 0
     MemtoReg = 0
     ALUOp = 0
-    MEMWrite = 0
+    MemWrite = 0
     ALUSrc = 0
     RegWrite = 0
 
