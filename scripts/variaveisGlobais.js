@@ -12,7 +12,7 @@ function iniciarVarGlobais(){
     }
     //Memoria de dados
     for (let i = 0; i <= 63; i ++){ 
-        memoria_de_dados.set(i*4,i)
+        memoria_de_dados.set(i*4,i*2)
     }
 
     //Separação de instrução por segmentos de bits
@@ -35,6 +35,7 @@ function iniciarVarGlobais(){
     MemWrite = 0
     ALUSrc = 0
     RegWrite = 0
+    Bne = 0
 
     //Outros sinais
     AluControl = 0

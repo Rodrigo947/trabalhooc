@@ -7,16 +7,10 @@ function traduzirComando() {
     return 0
   }
 
-
   var instrucaoTraduzida;
-  var opcode = retiraBits(31, 26, memoria_de_instrucoes.get(pc));
-  var rs = retiraBits(25, 21, memoria_de_instrucoes.get(pc));
-  var rt = retiraBits(20, 16, memoria_de_instrucoes.get(pc));
-  var rd = retiraBits(15, 11, memoria_de_instrucoes.get(pc));
-  var sa = retiraBits(10, 6, memoria_de_instrucoes.get(pc));
-  var func = retiraBits(5, 0, memoria_de_instrucoes.get(pc));
-  var immediate = retiraBits(15, 0, memoria_de_instrucoes.get(pc));
-  var desvio = retiraBits(25, 0, memoria_de_instrucoes.get(pc));
+  instructionMemory()
+  control()
+  trocarSinaisControleImg()
 
   if (opcode == 0) {
     //Tipo R
@@ -58,7 +52,7 @@ function traduzirComando() {
     switch (opcode) {
       case 2:
       case 3: //tipo J
-        instrucaoTraduzida = dicComandosIJ[opcode] + " " + desvio;
+        instrucaoTraduzida = dicComandosIJ[opcode] + " " + immediateJ;
         break;
 
       case 35:

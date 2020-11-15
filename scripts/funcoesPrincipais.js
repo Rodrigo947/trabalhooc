@@ -6,9 +6,6 @@ function retiraBits(final, inicial, instrucao) {
   return bits;
 }
 
-function addPC(){
-  pc += 4
-}
 
 function instructionMemory() {
   instrucao = memoria_de_instrucoes.get(pc)
@@ -28,7 +25,7 @@ function control() {
     // Tipo R
     case 0:
       RegDst = 1;
-      Jump = 0;
+      Jump = (func == 8) ? 2 : 0;
       Branch = 0;
       MemRead = 0;
       MemtoReg = 0;
@@ -36,6 +33,7 @@ function control() {
       MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 1;
+      Bne = 0;
       break;
 
     //Tipo I
@@ -49,10 +47,11 @@ function control() {
       MemWrite = 0;
       ALUSrc = 1;
       RegWrite = 1;
+      Bne = 0;
       break;
 
     case 35: //lw
-      RegDst = 1;
+      RegDst = 0;
       Jump = 0;
       Branch = 0;
       MemRead = 1;
@@ -61,6 +60,7 @@ function control() {
       MemWrite = 0;
       ALUSrc = 1;
       RegWrite = 1;
+      Bne = 0;
       break;
       
     case 43: //sw
@@ -73,6 +73,7 @@ function control() {
       MemWrite = 1;
       ALUSrc = 1;
       RegWrite = 0;
+      Bne = 0;
       break;
 
     case 4: //beq
@@ -85,18 +86,20 @@ function control() {
       MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 0;
+      Bne = 0;
       break;
 
     case 5: //bne
       RegDst = 0;
       Jump = 0;
-      Branch = 1;
+      Branch = 0;
       MemRead = 0;
       MemtoReg = 0; 
       ALUOp = 1;
       MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 0;
+      Bne = 1;
       break;
 
     //Tipo J
@@ -110,6 +113,7 @@ function control() {
       MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 0;
+      Bne = 0;
       break;
     
     case 3: //jal
@@ -122,8 +126,10 @@ function control() {
       MemWrite = 0;
       ALUSrc = 0;
       RegWrite = 1;
+      Bne = 0;
       break;
   }
+  
 }
 
 
@@ -132,10 +138,28 @@ function registers() {
   ReadData1 = banco_de_registradores.get(rs*4)
   ReadData2 = banco_de_registradores.get(rt*4)
 
+
+  //Definindo o Write Data  
+  var WriteData = 0
+  //MUX antes do Data Memory
+  switch (MemtoReg) {
+    case 0:
+      WriteData = ALUResult
+      break;
+    
+    case 1:
+      WriteData = ReadData
+      break;
+    
+    case 2:
+      WriteData = pc + 4 
+      break;
+  }
+
   //Definindo o Write Register
   if(RegWrite == 1){
     var WriteRegister = 0
-    //MUX depois do Data Memory
+    //MUX depois do Registers
     switch (RegDst) {
       case 0:
         WriteRegister = rt
@@ -149,23 +173,8 @@ function registers() {
         WriteRegister = 31
         break;
     }
-    banco_de_registradores.set(WriteRegister*4,WriteData)
-  }
-//Definindo o Write Data  
-  var WriteData = 0
-  //MUX antes do Registers
-  switch (MemtoReg) {
-    case 0:
-      WriteData = ALUResult
-      break;
-    
-    case 1:
-      WriteData = ReadData
-      break;
-    
-    case 2:
-      WriteData = pc
-      break;
+    if(WriteRegister != 0)
+      banco_de_registradores.set(WriteRegister*4,WriteData)
   }
 
 
@@ -272,11 +281,11 @@ function alu() {
       break
      
     case 7: //slt
-      ALUResult = ReadData1 < operando2
+      ALUResult = ReadData1 < operando2 ? 1 : 0
       break
       
     case 8: //sll
-      ALUResult = ReadData1 << operando2
+      ALUResult = operando2 << sa
       break;
   }
 
@@ -291,24 +300,26 @@ function dataMemory() {
   var Address = ALUResult
   var WriteData = ReadData2
   if(MemWrite) //sw
-    memoria_de_dados.set(Address,WriteData)
+    memoria_de_dados.set(Address*4,WriteData)
   if(MemtoReg) //lw
-    ReadData = memoria_de_dados.get(Address)
+    ReadData = memoria_de_dados.get(Address*4)
 }
 
 function atualizaPC(){
+  pc += 4
   //MUX superior mais a direita
-  switch (Jump) {
-    
+  switch (Jump) {  
     case 0: 
       //MUX superior a esquerda
-      if(Branch) // bne e beq
+      if(Branch && Zero) //beq
+        pc = pc + (SignExtend << 2) >>> 0
+      if(Bne && !Zero) //bne
         pc = pc + (SignExtend << 2) >>> 0
       break;
 
     case 1: // Jal, J
       immediateJ = (immediateJ << 2) >>> 0
-      pc = ((pc << 28) >>> 0) | immediateJ
+      pc = (pc >> 28) | immediateJ
       break;
     
     case 2: //Jr
@@ -320,7 +331,6 @@ function atualizaPC(){
 
 
 function main() {
-  addPC()
   instructionMemory()
   control()
   registers()

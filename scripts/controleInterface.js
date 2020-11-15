@@ -77,14 +77,14 @@ function desenhaRegistradores() {
 function desenhaMemoriaDados() {
 
   $("#tabMem").html("");
-  for (var i = 0; i <= 63; i += 4) {
+  for (var i = 0; i <= 63; i ++) {
     $("#tabMem").append(
       '<tr>' +
-        '<td id="mem'+(i)+'" class="valorMem text-center" >' +
+        '<td id="mem'+i+'" class="valorMem text-center" >' +
           memoria_de_dados.get(i*4) +
         "</td>" +
         "<td class='text-center'>" +
-          decimal4hex(i) +
+          decimal4hex(i*4) +
         "</td>" +
         "</tr>"
     );
@@ -153,7 +153,7 @@ function atualizarInterface() {
   //Atualizar de memória de dados
   $(".valorMem").each(function () {
     id = $(this).attr("id").substring(3);
-    $(this).html(memoria_de_dados.get(parseInt(id)));
+    $(this).html(memoria_de_dados.get(id*4));
   });
 
 }
@@ -237,4 +237,8 @@ function resetImagem() {
   Object.values(dicComandosIJ).forEach((element) =>{
     $("."+element).css("stroke","black")
   })
+}
+
+function trocarSinaisControleImg(){
+  $('#RegDst').html(RegDst);
 }
