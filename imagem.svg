@@ -41,9 +41,9 @@
    inkscape:window-height="1017"
    id="namedview1150"
    showgrid="false"
-   inkscape:zoom="2.5409823"
-   inkscape:cx="705.87195"
-   inkscape:cy="284.29156"
+   inkscape:zoom="1.2369035"
+   inkscape:cx="536.58072"
+   inkscape:cy="329.8743"
    inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
@@ -196,7 +196,7 @@
 	<rect
    x="434.5"
    y="431.5"
-   class="st1 add sub mult div and or slt sll lw beq jr jal addi bne"
+   class="st1 add sub mult div and or slt sll lw beq jr jal addi bne sw"
    width="150"
    height="213"
    id="rect963"
@@ -214,7 +214,7 @@
    id="polyline969"
    style="fill:none;fill-opacity:1;stroke:#00c5ff;stroke-opacity:1;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none;opacity:1" />
 	<polygon
-   class="st1 add sub mult div and or slt sll lw beq j addi bne jal"
+   class="st1 add sub mult div and or slt sll lw beq j addi bne jal sw"
    points="147.5,154.5 147.5,209.5 209.5,169.5 209.5,100.5 147.5,62.5 147.5,114.5 162.5,135.5  "
    id="polygon971"
    style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.484" />
@@ -247,11 +247,11 @@
 	<ellipse
    class="st1 j jal"
    cx="379"
-   cy="71"
-   rx="29.5"
-   ry="36.5"
+   cy="69.180939"
+   rx="29.536196"
+   ry="34.717136"
    id="ellipse1041"
-   style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.484" />
+   style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
 	<ellipse
    class="st1 beq bne"
    cx="662"
@@ -287,12 +287,12 @@
    id="path1051"
    style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.484" />
 	<path
-   class="st1 add sub mult div and or slt sll lw beq addi bne"
+   class="st1 add sub mult div and or slt sll lw beq addi bne sw"
    d="M923.5,197.5L923.5,197.5c-8.28,0-15-6.72-15-15v-89c0-8.28,6.72-15,15-15l0,0c8.28,0,15,6.72,15,15v89   C938.5,190.78,931.78,197.5,923.5,197.5z"
    id="path1053"
    style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.484" />
 	<path
-   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne"
+   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne sw"
    d="M1008.5,197.5L1008.5,197.5c-8.28,0-15-6.72-15-15v-88c0-8.28,6.72-15,15-15l0,0c8.28,0,15,6.72,15,15v88   C1023.5,190.78,1016.78,197.5,1008.5,197.5z"
    id="path1055"
    style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.484" />
@@ -365,7 +365,7 @@
    id="line1145"
    style="fill:none;fill-opacity:1;stroke:#000000;stroke-opacity:1;opacity:0.484" />
 <line
-   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne"
+   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne sw"
    x1="25.555588"
    y1="17.120029"
    x2="1063.5786"
@@ -379,21 +379,21 @@
    y2="474.03671"
    id="line1113-6-2"
    style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;fill-opacity:1;stroke-opacity:1;opacity:0.484" /><line
-   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne"
+   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne sw"
    x1="1062.3236"
    y1="17.129402"
    x2="1062.4117"
    y2="137.9093"
    id="line1113-6-2-0"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq j addi bne jal"
+   class="st1 add sub mult div and or slt sll lw beq j addi bne jal sw"
    x1="84.598824"
    y1="88.349083"
    x2="84.191765"
    y2="470.66083"
    id="line1113-6-2-3"
    style="stroke:#000000;stroke-width:3.74029;stroke-miterlimit:10;fill:none;fill-opacity:1;stroke-opacity:1;opacity:0.484" /><line
-   class="st1 add sub mult div and or slt sll lw beq j addi bne jal"
+   class="st1 add sub mult div and or slt sll lw beq j addi bne jal sw"
    x1="83.209663"
    y1="88.621178"
    x2="146.74303"
@@ -414,21 +414,21 @@
    y2="70.468399"
    id="line1113-6-25-9"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.86333;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 j"
+   class="st1 j jal"
    x1="309.96872"
    y1="107.53355"
    x2="309.55661"
    y2="135.12505"
    id="line1113-6-2-3-9-4"
    style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;fill-opacity:1;stroke-opacity:1;opacity:0.484" /><line
-   class="st1 j"
+   class="st1 j jal"
    x1="308.22476"
    y1="109.41135"
    x2="469.97882"
    y2="109.41135"
    id="line1113-6-25-9-1"
    style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;fill-opacity:1;stroke-opacity:1;opacity:0.484" /><line
-   class="st1 j"
+   class="st1 j jal"
    x1="468.74036"
    y1="68.320686"
    x2="468.32788"
@@ -456,28 +456,28 @@
    y2="111.79941"
    id="line1113-6-25-9-1-62"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.95969;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq jal addi bne"
+   class="st1 add sub mult div and or slt sll lw beq jal addi bne sw"
    x1="307.28024"
    y1="135.95294"
    x2="574.21906"
    y2="135.95294"
    id="line1113-6-5"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.27641;stroke-miterlimit:10;stroke-opacity:1;image-rendering:auto" /><line
-   class="st1 add sub mult div and or slt sll lw  addi "
+   class="st1 add sub mult div and or slt sll lw  addi  sw"
    x1="576.63794"
    y1="92.577492"
    x2="576.23157"
    y2="135.16743"
    id="line1113-6-2-3-9-4-94"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.70145;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq addi bne"
+   class="st1 add sub mult div and or slt sll lw addi sw"
    x1="576.4975"
    y1="94.160004"
    x2="908.14172"
    y2="94.160004"
    id="line1113-6-25-9-1-6-1"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.66216;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq addi bne"
+   class="st1 add sub mult div and or slt sll lw beq addi bne sw"
    x1="939.50305"
    y1="167.54808"
    x2="992.62915"
@@ -561,7 +561,7 @@
    y2="619.9903"
    id="line1113-6-5-0-5-5-6"
    style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;image-rendering:auto;fill-opacity:1;stroke-opacity:1;opacity:0.484" /><line
-   class="st1 add sub mult div and or slt  lw beq jr addi bne"
+   class="st1 add sub mult div and or slt  lw beq jr addi bne sw"
    x1="231.95284"
    y1="457.16696"
    x2="433.52417"
@@ -575,7 +575,7 @@
    y2="655.13031"
    id="line1113-6-5-0-5-1"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.00339;stroke-miterlimit:10;stroke-opacity:1;image-rendering:auto" /><line
-   class="st1 add sub mult div and or slt sll beq lw sll addi sw bne"
+   class="st1 add sub mult div and or slt beq lw addi sw bne"
    x1="612.99915"
    y1="486.91382"
    x2="694.05524"
@@ -631,14 +631,14 @@
    y2="139.67191"
    id="line1113-6-25-6-6-7-2-4-4-6"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.14455;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne"
+   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne sw"
    x1="1024.5731"
    y1="137.89668"
    x2="1063.8047"
    y2="137.89668"
    id="line1113-6-25-6-6-7-2-4-4-6-9"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.63445;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne"
+   class="st1 add sub mult div and or slt sll lw beq j jal jr addi bne sw"
    x1="23.138958"
    y1="474.03671"
    x2="37.763268"
@@ -1422,7 +1422,7 @@
      y="280.30325"
      style="stroke-width:0.344423"
      id="tspan2262" /></text><line
-   class="st1 add sub mult div and or slt sll lw beq j addi bne jal"
+   class="st1 add sub mult div and or slt sll lw beq j addi bne jal sw"
    x1="209.7601"
    y1="135.12505"
    x2="309.55661"
@@ -1537,7 +1537,7 @@
    y2="469.05032"
    id="line805-5"
    style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.53427;stroke-miterlimit:10;stroke-opacity:1" /><line
-   class="st1 add sub mult div and or slt sll lw beq j addi bne jal"
+   class="st1 add sub mult div and or slt sll lw beq j addi bne jal sw"
    x1="133.91319"
    y1="195.16147"
    x2="146.8082"
@@ -1571,13 +1571,7 @@
    x2="632.11163"
    y2="559.70917"
    id="line1113-6-25-6-6-7-52"
-   style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.58797;stroke-miterlimit:10;stroke-opacity:1" /><circle
-   class="st2"
-   cx="592.5"
-   cy="559.75"
-   id="circle1105-3-6"
-   r="5"
-   style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" /><line
+   style="opacity:0.484;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.58797;stroke-miterlimit:10;stroke-opacity:1" /><line
    class="st1 sw"
    x1="592.28241"
    y1="558.50836"
@@ -2044,5 +2038,11 @@
      id="tspan2124-5-0"
      x="531.37402"
      y="408.30722"
-     style="stroke-width:0.344423">0</tspan></text></g>
+     style="stroke-width:0.344423">0</tspan></text><circle
+   class="st2"
+   cx="592.5"
+   cy="559.75"
+   id="circle1105-3-6"
+   r="5"
+   style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" /></g>
 </svg>
