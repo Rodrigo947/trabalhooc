@@ -240,14 +240,14 @@ function resetImagem() {
 }
 
 function trocarSinaisControleImg(){
-  $('#RegDst').html(RegDst);
-  $('#Jump').html(Jump);
-  $('#Branch').html(Branch);
-  $('#MemRead').html(MemRead);
-  $('#MemtoReg').html(MemtoReg);
-  $('#ALUOp').html(ALUOp);
-  $('#MemWrite').html(MemWrite);
-  $('#ALUSrc').html(ALUSrc);
-  $('#RegWrite').html(RegWrite);
-  $('#Bne').html(Bne);
+  $('.RegDst').html(RegDst);
+  $('.Jump').html(Jump);
+  $('.Branch').html(Branch);
+  $('.MemRead').html(MemRead);
+  $('.MemtoReg').html(MemtoReg);
+  $('.ALUOp').html(ALUOp);
+  $('.MemWrite').html(MemWrite);
+  $('.ALUSrc').html(ALUSrc);
+  $('.RegWrite').html(RegWrite);
+  $('.Bne').html(Bne);
 }
