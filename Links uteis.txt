@@ -1,2 +1,0 @@
-Tabela para ajudar a entender as instruções -> https://docs.google.com/spreadsheets/d/1we0psMfnWwTtgIsuSNk7fYEk0m7-rpxow_j6TRIUOrk/edit?usp=sharing
-Converter instruções MIPS para binário -> https://www.eg.bucknell.edu/~csci320/mips_web/

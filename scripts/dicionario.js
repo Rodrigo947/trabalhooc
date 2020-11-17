@@ -7,7 +7,6 @@ function traduzirComando() {
     return 0
   }
 
-  var instrucaoTraduzida;
   instructionMemory()
   control()
   trocarSinaisControleImg()

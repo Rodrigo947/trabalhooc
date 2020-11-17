@@ -339,7 +339,37 @@ function main() {
   alu()
   dataMemory()
   registers()
+  atualizarArqResultado()
   atualizaPC()
   atualizarInterface()
 }
 
+function atualizarArqResultado() {
+  conteudoArqResultados += '\n>>>>> Instrucao: ' + instrucaoTraduzida + " = " + instrucao + '<<<<<\n' 
+  conteudoArqResultados += 'PC: ' + pc + '\n'
+  
+  conteudoArqResultados += '\nSinais de Controle \n'
+  conteudoArqResultados += 'RegDst = ' + RegDst + '\n'
+  +'Jump = ' + Jump + '\n'
+  +'Branch = ' + Branch + '\n'
+  +'MemRead = ' + MemRead + '\n'
+  +'MemtoReg = ' + MemtoReg + '\n'
+  +'ALUOp = ' + ALUOp + '\n'
+  +'MemWrite = ' + MemWrite + '\n'
+  +'ALUSrc = ' + ALUSrc + '\n'
+  +'RegWrite = ' + RegWrite + '\n'
+  +'Bne = ' + Bne + '\n\n'
+  
+  conteudoArqResultados += 'Banco de Registradores \n'
+  for (let i = 0; i < 31; i++) {
+    var valorReg = banco_de_registradores.get(i*4) 
+    conteudoArqResultados += dicRegistradores[i] + " = " + valorReg + '\n'
+  }
+
+  conteudoArqResultados += '\nMemoria de dados \n'
+  for (let i = 0; i < 64; i++) {
+    var valorMem = memoria_de_dados.get(i*4) 
+    conteudoArqResultados += 'Posicao ' + i + ' = ' + valorMem + '\n'
+  }
+  
+}

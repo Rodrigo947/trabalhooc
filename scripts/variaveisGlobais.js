@@ -48,5 +48,6 @@ function iniciarVarGlobais(){
     ALUResult = 0
     ReadData = 0    
     ShiftLeft2 = 0
-
+    instrucaoTraduzida = ''
+    conteudoArqResultados = '-----Logs de execucao de cada instrucao-----\n'
 }

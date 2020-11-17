@@ -182,14 +182,17 @@ function reset() {
 
 function execucaoTotal() {
 
-  while (pc <= enderecoFinalInstrucoes) 
+  while (pc <= enderecoFinalInstrucoes) {
     main();
+    traduzirComando();
+  }
 
   $(".valorPC").each(function () {
     $(this).removeClass("instrucaoAtiva")
   })
-  traduzirComando();
   $("#instrucaoAtual").html("Finalizado")
+  downloadResultado()
+  
 }
 
 function passoApasso() {
@@ -202,7 +205,9 @@ function passoApasso() {
     $(".valorPC").each(function () {
       $(this).removeClass("instrucaoAtiva")
     })
+    downloadResultado()
   } 
+
 }
 
 
@@ -250,4 +255,12 @@ function trocarSinaisControleImg(){
   $('.ALUSrc').html(ALUSrc);
   $('.RegWrite').html(RegWrite);
   $('.Bne').html(Bne);
+}
+
+function downloadResultado(){
+  var hiddenElement = document.createElement("a")
+  hiddenElement.href = "data:attachment/text," + encodeURI(conteudoArqResultados)
+  hiddenElement.target = "_blank"
+  hiddenElement.download = "resultado.txt"
+  hiddenElement.click()
 }
