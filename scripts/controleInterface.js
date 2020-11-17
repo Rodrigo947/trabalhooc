@@ -171,6 +171,7 @@ function carregar() {
 }
 
 function reset() {
+  downloadResultado()
   iniciarVarGlobais()
   resetImagem()
   $("#titulos").show()
